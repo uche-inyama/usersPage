@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from 'react-redux';
+import { receiveCenters } from './action';
+import HomePage from './homePage';
+import DetailsPage from './detailsPage';
 import './App.css';
 import './reset.css';
 
-function App() {
+function App({ loadCenters }) {
+  useEffect(() => {
+    loadCenters()
+  }, [])
+
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/" component={homePage} />
-          <Route path="" component={detailsPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/details/:id" component={DetailsPage} />
         </Switch>
       </Router>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadCenters: (() => {
+      dispatch(receiveCenters())
+    })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

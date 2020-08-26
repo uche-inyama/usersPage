@@ -1,7 +1,7 @@
 import React from 'react';
 import { getCenter } from '../src/action';
 
-const EventCenterDetailPage = () => {
+const DetailPage = () => {
 
   return (
     <div>
@@ -18,6 +18,9 @@ const EventCenterDetailPage = () => {
   )
 }
 
+const mapStateToProps = () => {
+
+}
 
 
-export default EventCenterDetailPage;
+export default DetailPage;

@@ -1,17 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCenter } from './action';
+import { connect } from 'react-redux';
 import { HallImageWrapper } from './centerCardStyle';
-import DetailsPage from './detailsPage'
+import { getCenter } from './action';
 
-const centerCard = ({ hallname, image, fetchCenter, id, center }) => {
+const centerCard = ({ hallname, image, fetchCenter, id }) => {
   let image_url = `"http://localhost:3002${image}"`;
-  console.log(center)
 
   const handleClick = () => {
     fetchCenter(id)
   }
+
   return (
     <HallImageWrapper >
       <div className="image-wrapper">
@@ -26,7 +25,7 @@ const centerCard = ({ hallname, image, fetchCenter, id, center }) => {
         <div className="hall-detail">
           <p>hall: <span>{hallname}</span></p>
         </div>
-        <div to="/detail" onClick={handleClick}>click here for details</div>
+        <Link to={`/details/${id}`} onClick={handleClick}>click here for details</Link>
       </div>
     </HallImageWrapper >
   );
@@ -40,10 +39,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    center: state.centers
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(centerCard)
+export default connect(null, mapDispatchToProps)(centerCard)

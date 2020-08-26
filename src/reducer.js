@@ -1,6 +1,6 @@
 import { GET_CENTERS, GET_CENTER } from '../src/action'
 
-const centers = (state, action) => {
+const centers = (state = [], action) => {
   switch (action.type) {
     case GET_CENTERS:
       return [...state, ...action.centers]

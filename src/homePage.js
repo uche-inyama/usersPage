@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CenterCard from './centerCard';
 import { connect } from 'react-redux';
 
-
-const homePage = ({ centers }) => {
+const HomePage = ({ centers }) => {
 
   // fetch centers to display.
 
@@ -33,9 +32,10 @@ const homePage = ({ centers }) => {
 }
 
 
+
 const mapStateToProps = (state) => {
   return {
     centers: state.centers
   }
 }
-export default connect(mapStateToProps, null)(homePage);
+export default connect(mapStateToProps, null)(HomePage);
