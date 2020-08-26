@@ -25,7 +25,7 @@ const centerCard = ({ hallname, image, fetchCenter, id }) => {
         <div className="hall-detail">
           <p>hall: <span>{hallname}</span></p>
         </div>
-        <Link to={`/details/${id}`} onClick={handleClick}>click here for details</Link>
+        <Link to={`/details/${id}`} >click here for details</Link>
       </div>
     </HallImageWrapper >
   );

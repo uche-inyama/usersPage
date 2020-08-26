@@ -5,7 +5,7 @@ const centers = (state = [], action) => {
     case GET_CENTERS:
       return [...state, ...action.centers]
     case GET_CENTER:
-      return state.filter((ele, idx) => action.id === idx)
+      return
     default:
       return state
   }
