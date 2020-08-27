@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import axios from 'axios'
+import { receiveUser } from '../../action';
+import { connect } from 'react-redux';
 
-export default class Registration extends Component {
+class Registration extends Component {
   constructor(props) {
     super(props);
 
@@ -13,16 +15,16 @@ export default class Registration extends Component {
   }
 
   handleSubmit(e) {
-    const { username } = this.state
 
     let data = new FormData(e.target)
-    fetch('http://localhost:3002/registrations', {
-      method: "POST",
-      mode: "cors",
-      body: data
+    this.props.loadUsers(data);
+    // fetch('http://localhost:3002/registrations', {
+    //   method: "POST",
+    //   mode: "cors",
+    //   body: data
 
-    }).then(response => response.json())
-      .then(data => console.log(data))
+    // }).then(response => response.json())
+    //   .then(data => console.log(data))
     e.preventDefault();
   }
 
@@ -51,3 +53,19 @@ export default class Registration extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadUsers: ((data) => {
+      dispatch(receiveUser(data))
+    })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Registration)

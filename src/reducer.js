@@ -1,6 +1,6 @@
-import { GET_CENTERS, GET_CENTER } from '../src/action'
+import { GET_CENTERS, GET_CENTER, POST_USER } from '../src/action'
 
-const centers = (state = [], action) => {
+export const centers = (state = [], action) => {
   switch (action.type) {
     case GET_CENTERS:
       return [...state, ...action.centers]
@@ -11,4 +11,12 @@ const centers = (state = [], action) => {
   }
 }
 
-export default centers;
+export const users = (state = [], action) => {
+  switch (action.type) {
+    case POST_USER:
+      return [...state, action.user]
+    default:
+      return state
+  }
+}
+
