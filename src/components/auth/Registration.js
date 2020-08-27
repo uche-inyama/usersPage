@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class Registration extends Component {
   constructor(props) {
@@ -12,10 +13,19 @@ export default class Registration extends Component {
   }
 
   handleSubmit(e) {
-    console.log("form submitted");
-    e.preventDefault();
+    const { username } = this.state
 
+    let data = new FormData(e.target)
+    fetch('http://localhost:3002/registrations', {
+      method: "POST",
+      mode: "cors",
+      body: data
+
+    }).then(response => response.json())
+      .then(data => console.log(data))
+    e.preventDefault();
   }
+
 
   handleChange(e, name) {
     console.log("handle change")
