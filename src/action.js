@@ -44,6 +44,5 @@ export const receiveUser = (data) => {
     })
       .then(response => response.json())
       .then(data => dispatch(postUser(data)))
-      .then(data => console.log(data))
   }
 }

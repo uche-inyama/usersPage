@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CenterCard from './centerCard';
 import { connect } from 'react-redux';
-import Registration from './components/auth/Registration'
 
 const HomePage = ({ centers }) => {
 
@@ -10,7 +9,6 @@ const HomePage = ({ centers }) => {
       <div className="container">
         <main>
           <div className="centerList">
-            <Registration />
             <ul>
               {centers.map((center, index) => {
                 return (

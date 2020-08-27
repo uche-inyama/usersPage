@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import { receiveUser } from '../../action';
 import { connect } from 'react-redux';
 
@@ -15,17 +14,10 @@ class Registration extends Component {
   }
 
   handleSubmit(e) {
-
+    e.preventDefault();
     let data = new FormData(e.target)
     this.props.loadUsers(data);
-    // fetch('http://localhost:3002/registrations', {
-    //   method: "POST",
-    //   mode: "cors",
-    //   body: data
-
-    // }).then(response => response.json())
-    //   .then(data => console.log(data))
-    e.preventDefault();
+    this.props.history.push('/')
   }
 
 

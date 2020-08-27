@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { receiveCenters } from './action';
 import HomePage from './homePage';
 import DetailsPage from './detailsPage';
+import Register from './components/auth/Registration'
 import './App.css';
 import './reset.css';
 
@@ -17,7 +18,8 @@ function App({ loadCenters }) {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/details/:id" component={DetailsPage} />
+          <Route excat path="/details/:id" component={DetailsPage} />
+          <Route excat path="/register" component={Register} />
         </Switch>
       </Router>
     </div>
