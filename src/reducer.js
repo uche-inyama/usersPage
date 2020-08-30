@@ -1,4 +1,10 @@
-import { GET_CENTERS, GET_CENTER, POST_USER } from '../src/action'
+import {
+  GET_CENTERS,
+  GET_CENTER,
+  RECEIVE_CURRENT_USER,
+  BOOK_APPOINTMENT,
+  GET_APPOINTMENTS
+} from '../src/action'
 
 export const centers = (state = [], action) => {
   switch (action.type) {
@@ -11,12 +17,22 @@ export const centers = (state = [], action) => {
   }
 }
 
-export const users = (state = [], action) => {
+export const user = (state = null, action) => {
   switch (action.type) {
-    case POST_USER:
-      return [...state, action.user]
+    case RECEIVE_CURRENT_USER:
+      return action.user
     default:
       return state
   }
 }
 
+export const appointmentBookings = (state = [], action) => {
+  switch (action.type) {
+    case BOOK_APPOINTMENT:
+      return [...state, action.booking]
+    case GET_APPOINTMENTS:
+      return [...state, ...action.appointments]
+    default:
+      return state
+  }
+}

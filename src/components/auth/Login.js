@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import { receiveUser } from '../../action';
+import { authenticateUser } from '../../action';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Registration extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       username: "",
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let data = new FormData(e.target)
-    this.props.loadUsers(data);
-    this.props.history.push('/')
+    let data = new FormData(e.target);
+    try {
+      this.props.loginUser(data, () => {
+        this.props.history.push('/Home');
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   handleChange(e, name) {
-    console.log("handle change")
     e.preventDefault();
     this.setState({
       [name]: e.target.value
@@ -31,34 +35,29 @@ class Registration extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <form onSubmit={this.handleSubmit}>
-          <input type="text"
+          <input
+            type="text"
             name="user[username]"
-            value={this.state.username}
             onChange={(e) => { this.handleChange(e, 'username') }}
+            value={this.state.username}
             required
           />
-          <input type="submit" />
+          <input type="submit" value="Login" />
         </form>
-        <Link to="/">Login</Link>
-      </div>
+        <Link to="/register">Sign up</Link>
+      </>
     )
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    users: state.users
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadUsers: ((data) => {
-      dispatch(receiveUser(data))
+    loginUser: ((user, cb) => {
+      dispatch(authenticateUser(user, cb));
     })
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Registration)
+export default connect(null, mapDispatchToProps)(Login)
