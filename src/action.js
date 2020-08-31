@@ -5,7 +5,6 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const BOOK_APPOINTMENT = 'SHEDULE_APPOINTMENT';
 export const GET_APPOINTMENTS = 'SET_APPOINTMENTS';
 
-
 export const getCenters = (centers) => {
   return {
     type: GET_CENTERS,
@@ -79,7 +78,6 @@ export const sheduleMeeting = (data) => {
   }
 }
 
-
 export const receiveAppointments = (username) => {
   const url = `http://localhost:3002/appointments/${username}`
   return dispatch => {
@@ -94,7 +92,6 @@ export const receiveAppointments = (username) => {
   }
 }
 
-
 export const authenticateUser = (data, cb) => {
   console.log(data);
   const url = `http://localhost:3002/sessions`
@@ -107,9 +104,8 @@ export const authenticateUser = (data, cb) => {
       { withCredentials: true }
     )
       .then(response => response.json())
-      .then(({ user }) => {
-        console.log(user)
-        localStorage.setItem('username', user.username)
+      .then(({ current_user }) => {
+        localStorage.setItem('current_user', current_user.username)
         cb();
       });
   };

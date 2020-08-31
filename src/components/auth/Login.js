@@ -9,6 +9,7 @@ class Login extends Component {
 
     this.state = {
       username: "",
+      current_user: {}
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -19,6 +20,7 @@ class Login extends Component {
     let data = new FormData(e.target);
     try {
       this.props.loginUser(data, () => {
+        console.log(this.props.history)
         this.props.history.push('/Home');
       });
     } catch (error) {

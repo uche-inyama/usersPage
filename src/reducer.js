@@ -1,9 +1,9 @@
 import {
   GET_CENTERS,
   GET_CENTER,
-  RECEIVE_CURRENT_USER,
+  POST_USER,
   BOOK_APPOINTMENT,
-  GET_APPOINTMENTS
+  GET_APPOINTMENTS,
 } from '../src/action'
 
 export const centers = (state = [], action) => {
@@ -19,7 +19,7 @@ export const centers = (state = [], action) => {
 
 export const user = (state = null, action) => {
   switch (action.type) {
-    case RECEIVE_CURRENT_USER:
+    case POST_USER:
       return action.user
     default:
       return state

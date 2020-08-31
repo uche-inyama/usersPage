@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import {
   receiveCenters,
@@ -10,6 +10,7 @@ import DetailsPage from './detailsPage';
 import Register from './components/auth/Registration'
 import Login from './components/auth/Login'
 import Appointments from './appointments'
+import NavBar from './navBar'
 import './App.css';
 import './reset.css';
 
@@ -19,15 +20,20 @@ function App({ loadCenters, loadAppointments }) {
     loadAppointments()
   }, [])
 
+  const current_user = localStorage.getItem('current_user')
 
   return (
-    <div className="App">
+    <div className="App" >
+
       <Router>
+        <NavBar
+          current_user={current_user}
+        />
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route excat path="/register" component={Register} />
+          <Route exact path="/register" component={Register} />
           <Route exact path="/Home" component={HomePage} />
-          <Route excat path="/details/:id" component={DetailsPage} />
+          <Route exact path="/details/:id" component={DetailsPage} />
           <Route exact path="/appointment/:id" component={Appointments} />
         </Switch>
       </Router>

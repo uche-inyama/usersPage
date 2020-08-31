@@ -6,10 +6,11 @@ import { getCenter } from './action';
 
 const centerCard = ({ hallname, image, fetchCenter, id }) => {
   let image_url = `"http://localhost:3002${image}"`;
+  const username = localStorage.getItem('username');
 
-  const handleClick = () => {
-    fetchCenter(id)
-  }
+  // const handleClick = () => {
+  //   fetchCenter(id)
+  // }
 
   return (
     <HallImageWrapper >

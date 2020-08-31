@@ -10,10 +10,8 @@ const DetailPage = ({ centers, bookings }) => {
   const [city, setCity] = useState('')
 
   const center = centers.find(element => element.id === parseInt(id))
-  const username = localStorage.getItem('username');
-  const item = localStorage.getItem('appointment')
+  const current_user = localStorage.getItem('current_user');
 
-  console.log(item)
   const emailChangeHandler = (e) => {
     e.preventDefault()
     setEmailAddress(e.target.value)
@@ -34,6 +32,7 @@ const DetailPage = ({ centers, bookings }) => {
 
   return (
     <div>
+
       <div className="image-wrapper">
 
       </div>
@@ -41,7 +40,7 @@ const DetailPage = ({ centers, bookings }) => {
         <form onSubmit={submitHandler}>
           <input type="text"
             name="appointment[username]"
-            value={username}
+            value={current_user}
             readOnly={true}
           />
 
