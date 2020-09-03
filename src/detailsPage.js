@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { sheduleMeeting } from './action'
 
-const DetailPage = ({ centers, bookings }) => {
+export const DetailPage = ({ centers, bookings }) => {
   let { id } = useParams();
 
   const [email, setEmailAddress] = useState('')
@@ -32,7 +32,6 @@ const DetailPage = ({ centers, bookings }) => {
 
   return (
     <div>
-
       <div className="image-wrapper">
 
       </div>

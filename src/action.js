@@ -43,7 +43,10 @@ export const bookAppointment = (booking) => {
 export const receiveCenters = () => {
   const url = `http://localhost:3002/api/v1/centers`
   return dispatch => {
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      mode: 'cors'
+    })
       .then(response => response.json())
       .then(data => {
         dispatch(getCenters(data))

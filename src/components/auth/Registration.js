@@ -3,7 +3,7 @@ import { receiveUser } from '../../action';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Registration extends Component {
+export class Registration extends Component {
   constructor(props) {
     super(props);
 
@@ -22,8 +22,7 @@ class Registration extends Component {
   }
 
   handleChange(e, name) {
-    console.log("handle change")
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({
       [name]: e.target.value
     })

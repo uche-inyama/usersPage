@@ -4,13 +4,8 @@ import { connect } from 'react-redux';
 import { HallImageWrapper } from './centerCardStyle';
 import { getCenter } from './action';
 
-const centerCard = ({ hallname, image, fetchCenter, id }) => {
+export const CenterCard = ({ hallname, image, id }) => {
   let image_url = `"http://localhost:3002${image}"`;
-  const username = localStorage.getItem('username');
-
-  // const handleClick = () => {
-  //   fetchCenter(id)
-  // }
 
   return (
     <HallImageWrapper >
@@ -41,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(null, mapDispatchToProps)(centerCard)
+export default connect(null, mapDispatchToProps)(CenterCard)

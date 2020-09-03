@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const HomePage = ({ centers }) => {
   const current_user = localStorage.getItem('current_user')
-  console.log(current_user)
   if (current_user) {
     return (
       <div className="container">

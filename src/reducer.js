@@ -31,7 +31,7 @@ export const appointmentBookings = (state = [], action) => {
     case BOOK_APPOINTMENT:
       return [...state, action.booking]
     case GET_APPOINTMENTS:
-      return [...state, ...action.appointments]
+      return [...state, action.appointments]
     default:
       return state
   }
