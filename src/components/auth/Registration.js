@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { receiveUser } from '../../action';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RegistrationWrapper } from './RegistrationStyle';
+import image from '../../asset/image/eventCenter.jpg'
+
 
 export class Registration extends Component {
   constructor(props) {
@@ -30,18 +33,25 @@ export class Registration extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text"
-            name="user[username]"
-            value={this.state.username}
-            onChange={(e) => { this.handleChange(e, 'username') }}
-            required
-          />
-          <input type="submit" />
-        </form>
-        <Link to="/">Login</Link>
-      </div>
+      <RegistrationWrapper>
+        <div
+          className="image"
+          style={{
+            backgroundImage: `url(${image})`
+          }}
+        >
+          <form onSubmit={this.handleSubmit}>
+            <input type="text"
+              name="user[username]"
+              value={this.state.username}
+              onChange={(e) => { this.handleChange(e, 'username') }}
+              required
+            />
+            <input type="submit" />
+          </form>
+          <Link to="/">Login</Link>
+        </div>
+      </RegistrationWrapper >
     )
   }
 }

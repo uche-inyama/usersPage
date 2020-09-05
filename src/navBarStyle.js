@@ -30,6 +30,9 @@ nav{
         li{
           margin-left: 13px;
         }
+        div{
+          padding: 8px;
+        }
       }
     }
   }

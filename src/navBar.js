@@ -41,8 +41,8 @@ function NavBar(props) {
     <>
       <nav>
         <ul>
-          <li>
-            <div className="logo">logo</div>
+          <li className="logo">
+            <span>logo</span>
           </li>
           <li className="navigation">
             <div>about</div>

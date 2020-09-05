@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { authenticateUser } from '../../action';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { LoginWrapper } from './loginStyle'
+import image from '../../asset/image/eventCenter.jpg'
 
 export class Login extends Component {
   constructor(props) {
@@ -38,17 +40,26 @@ export class Login extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="user[username]"
-            onChange={(e) => { this.handleChange(e, 'username') }}
-            value={this.state.username}
-            required
-          />
-          <input type="submit" value="Login" />
-        </form>
-        <Link to="/register">Sign up</Link>
+        <LoginWrapper>
+          <div
+            className="image"
+            style={{
+              backgroundImage: `url(${image})`
+            }}
+          >
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                name="user[username]"
+                onChange={(e) => { this.handleChange(e, 'username') }}
+                value={this.state.username}
+                required
+              />
+              <input type="submit" value="Login" />
+            </form>
+            <Link to="/register" className="register-link">Sign up</Link>
+          </div>
+        </LoginWrapper>
       </>
     )
   }
