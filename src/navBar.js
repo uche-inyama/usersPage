@@ -1,5 +1,8 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+import { NavBarWrapper } from './navBarStyle'
 
 function NavBar(props) {
   let history = useHistory();
@@ -15,21 +18,32 @@ function NavBar(props) {
   let navBar = props.current_user ?
     (<nav>
       <ul>
-        <li>logo</li>
-        <li>about</li>
-        <li>contact</li>
-        <li onClick={handleClick}>sign out</li>
+        <li className="logo">
+          <span>logo</span>
+        </li>
+        <li class="navigation">
+          <Link to={`/appointment/${props.current_user}`}>Appointments</Link>
+          <div>about</div>
+          <div>contact</div>
+          <div onClick={handleClick}>sign out</div>
+        </li>
       </ul>
     </nav>) :
     <>
-      <ul>
-        <li>logo</li>
-        <li>about</li>
-        <li>contact</li>
-      </ul>
+      <nav>
+        <ul>
+          <li>
+            <div className="logo">logo</div>
+          </li>
+          <li className="navigation">
+            <div>about</div>
+            <div>contact</div>
+          </li>
+        </ul>
+      </nav>
     </>
   return (
-    <div>{navBar}</div>
+    <NavBarWrapper>{navBar}</NavBarWrapper>
   )
 }
 

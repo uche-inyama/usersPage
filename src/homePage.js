@@ -1,16 +1,16 @@
 import React from 'react';
 import CenterCard from './centerCard';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const HomePage = ({ centers }) => {
   const current_user = localStorage.getItem('current_user')
   if (current_user) {
     return (
       <div className="container">
-        <nav>
+        {/* <nav>
           <Link to={`/appointment/${current_user}`}>Appointments</Link>
-        </nav>
+        </nav> */}
         <main>
           <div className="centerList">
             <ul>

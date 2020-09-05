@@ -11,6 +11,7 @@ import Register from './components/auth/Registration'
 import Login from './components/auth/Login'
 import Appointments from './appointments'
 import NavBar from './navBar'
+import { AppWrapper } from './AppStyle'
 import './App.css';
 import './reset.css';
 
@@ -23,7 +24,7 @@ function App({ loadCenters, loadAppointments }) {
   const current_user = localStorage.getItem('current_user')
 
   return (
-    <div className="App" >
+    <AppWrapper >
 
       <Router>
         <NavBar
@@ -37,7 +38,7 @@ function App({ loadCenters, loadAppointments }) {
           <Route exact path="/appointment/:id" component={Appointments} />
         </Switch>
       </Router>
-    </div>
+    </AppWrapper>
   );
 }
 
