@@ -51,11 +51,11 @@ export const DetailPage = ({ centers, bookings }) => {
         </div>
         <div className="details">
           <ul>
-            <li>building: {building}</li>
-            <li>location: {city} city,</li>
-            <li>{state} state</li>
-            <li>capacity: {capacity}</li>
-            <li>price: {price} </li>
+            <li>Building: {building}</li>
+            <li>Location: {city} city </li>
+            <li>State: {state} </li>
+            <li>Capacity: {capacity}</li>
+            <li>Price: {price} </li>
           </ul>
         </div>
       </div>

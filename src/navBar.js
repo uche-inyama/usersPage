@@ -20,13 +20,14 @@ function NavBar(props) {
     (<nav>
       <ul>
         <li className="logo">
-          <span>logo</span>
+          <p className="event">Event</p>
+          <p className="center">Centers</p>
         </li>
         <li className="navigation">
           <Link to={`/appointment/${props.current_user}`}>Appointments</Link>
           <div>about</div>
           <div>contact</div>
-          <div onClick={handleClick}>sign out</div>
+          <div class="signout" onClick={handleClick}>sign out</div>
         </li>
         <li className="social-media-icons">
           <div className="navEnd">
@@ -42,7 +43,7 @@ function NavBar(props) {
       <nav>
         <ul>
           <li className="logo">
-            <span>logo</span>
+            <span>Event Centers</span>
           </li>
           <li className="navigation">
             <div>about</div>

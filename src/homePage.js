@@ -8,7 +8,9 @@ const HomePage = ({ centers }) => {
   if (current_user) {
     return (
       <HomePageWrapper className="container">
-        <div className="emptySpace"></div>
+        <div className="emptySpace">
+          Latest Halls
+        </div>
         <main>
           <div className="centerList">
             <ul>

@@ -47,17 +47,20 @@ export class Login extends Component {
               backgroundImage: `url(${image})`
             }}
           >
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                name="user[username]"
-                onChange={(e) => { this.handleChange(e, 'username') }}
-                value={this.state.username}
-                required
-              />
-              <input type="submit" value="Login" />
-            </form>
-            <Link to="/register" className="register-link">Sign up</Link>
+            <div className="formWrapper">
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  className="field"
+                  type="text"
+                  name="user[username]"
+                  onChange={(e) => { this.handleChange(e, 'username') }}
+                  value={this.state.username}
+                  required
+                />
+                <input className="submit" type="submit" value="Login" />
+              </form>
+              <Link to="/register" className="register-link"> Sign up</Link>
+            </div>
           </div>
         </LoginWrapper>
       </>

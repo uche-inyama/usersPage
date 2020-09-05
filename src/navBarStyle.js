@@ -14,11 +14,23 @@ nav{
     .logo{
       align-self: center;
       justify-self: center;
+      .center, .event{
+        font-size: 1.5em;
+        font-weight: 700;
+      }
     }
     .navigation{
       display: grid;
       grid-template-columns: 1fr;
-      text-align: center;   
+      text-align: center;
+      font-size: 1.2em;  
+      .signout{
+        border: solid 1px black;
+        width: 100px;
+        height: 25px;
+        margin-left: 10px;
+        padding-top: 6px;
+      } 
     }
     .social-media-icons{
       padding-bottom: 30px;
