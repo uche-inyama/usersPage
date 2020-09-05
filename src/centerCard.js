@@ -19,7 +19,7 @@ export const CenterCard = ({ hallname, image, id }) => {
       </div>
       <div className="basic-center-info">
         <div className="hall-detail">
-          <p>hall: <span>{hallname}</span></p>
+          <p> <span>{hallname} hall</span></p>
         </div>
         <Link to={`/details/${id}`} >click here for details</Link>
       </div>

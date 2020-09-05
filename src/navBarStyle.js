@@ -7,7 +7,7 @@ nav{
   ul{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 200px 200px 200px;
     grid-gap: 2px;
     justify-content: start;
     height: 100%;
@@ -20,5 +20,15 @@ nav{
       grid-template-columns: 1fr;
       text-align: center;   
     }
+    .social-media-icons{
+      padding-bottom: 30px;
+      .navEnd{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: flex-end;
+      }
+    }
+  }
 }
 ` ;

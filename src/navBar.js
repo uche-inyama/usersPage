@@ -27,6 +27,15 @@ function NavBar(props) {
           <div>contact</div>
           <div onClick={handleClick}>sign out</div>
         </li>
+        <li className="social-media-icons">
+          <div className="navEnd">
+            <li>hi</li>
+            <li>hi</li>
+            <li>hi</li>
+            <li>hi</li>
+            <li>hi</li>
+          </div>
+        </li>
       </ul>
     </nav>) :
     <>
