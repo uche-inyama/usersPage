@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavBarWrapper } from './navBarStyle'
 
@@ -29,11 +30,10 @@ function NavBar(props) {
         </li>
         <li className="social-media-icons">
           <div className="navEnd">
-            <li>hi</li>
-            <li>hi</li>
-            <li>hi</li>
-            <li>hi</li>
-            <li>hi</li>
+            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'facebook']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'pinterest']} /></li>
+            <li><FontAwesomeIcon icon={['fab', 'instagram']} /></li>
           </div>
         </li>
       </ul>

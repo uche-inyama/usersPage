@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { sheduleMeeting } from './action'
+import { DetailWrapper } from './detailStyle';
 
 export const DetailPage = ({ centers, bookings }) => {
   let { id } = useParams();
@@ -31,10 +32,16 @@ export const DetailPage = ({ centers, bookings }) => {
   }
 
   return (
-    <div>
-      <div className="image-wrapper">
+    <DetailWrapper>
+      <div className="top-wrapper">
+        <div className="image-wrapper">
 
+        </div>
+        <div className="details">
+
+        </div>
       </div>
+
       <div className="book-appointment">
         <form onSubmit={submitHandler}>
           <input type="text"
@@ -64,7 +71,7 @@ export const DetailPage = ({ centers, bookings }) => {
           <input type="submit" value="submit" />
         </form>
       </div>
-    </div>
+    </DetailWrapper>
   )
 }
 

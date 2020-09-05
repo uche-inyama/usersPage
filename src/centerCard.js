@@ -15,7 +15,7 @@ export const CenterCard = ({ hallname, image, id }) => {
           style={{
             backgroundImage: `url(${image_url})`,
           }}
-        />
+        ></div>
       </div>
       <div className="basic-center-info">
         <div className="hall-detail">

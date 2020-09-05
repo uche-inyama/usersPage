@@ -7,7 +7,7 @@ nav{
   ul{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 200px;
+    grid-template-rows: 200px 200px 320px;
     grid-gap: 2px;
     justify-content: start;
     height: 100%;
@@ -27,6 +27,9 @@ nav{
         flex-direction: row;
         height: 100%;
         align-items: flex-end;
+        li{
+          margin-left: 13px;
+        }
       }
     }
   }

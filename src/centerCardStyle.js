@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const HallImageWrapper = styled.div`
   .image-wrapper {
     width: 95%;
-    height: 300px;
+    height: 350px;
     margin: 0 auto;
     .image{
       width: 100%;
