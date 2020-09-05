@@ -30,7 +30,6 @@ grid-gap: 5px;
   .book-appointment{
     display: grid;
     padding-left: 100px;
-    // justify-content: center;
     form input {
       height: 30px;
       width: 300px;

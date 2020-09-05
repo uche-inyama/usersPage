@@ -10,7 +10,6 @@ export const DetailPage = ({ centers, bookings }) => {
   const [city, setCity] = useState('')
 
   const center = centers.find(element => element.id === parseInt(id))
-  console.log(center)
   const image = center ? center.image : '';
   const hall = center ? center.hall : '';
   const building = center ? center.building : '';
@@ -55,8 +54,8 @@ export const DetailPage = ({ centers, bookings }) => {
             <li>building: {building}</li>
             <li>location: {city} city,</li>
             <li>{state} state</li>
-            <li></li>
-            <li></li>
+            <li>capacity: {capacity}</li>
+            <li>price: {price} </li>
           </ul>
         </div>
       </div>
