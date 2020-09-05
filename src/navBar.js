@@ -22,7 +22,7 @@ function NavBar(props) {
         <li className="logo">
           <span>logo</span>
         </li>
-        <li class="navigation">
+        <li className="navigation">
           <Link to={`/appointment/${props.current_user}`}>Appointments</Link>
           <div>about</div>
           <div>contact</div>
@@ -30,10 +30,10 @@ function NavBar(props) {
         </li>
         <li className="social-media-icons">
           <div className="navEnd">
-            <li><FontAwesomeIcon icon={['fab', 'twitter']} /></li>
-            <li><FontAwesomeIcon icon={['fab', 'facebook']} /></li>
-            <li><FontAwesomeIcon icon={['fab', 'pinterest']} /></li>
-            <li><FontAwesomeIcon icon={['fab', 'instagram']} /></li>
+            <div><FontAwesomeIcon icon={['fab', 'twitter']} /></div>
+            <div><FontAwesomeIcon icon={['fab', 'facebook']} /></div>
+            <div><FontAwesomeIcon icon={['fab', 'pinterest']} /></div>
+            <div><FontAwesomeIcon icon={['fab', 'instagram']} /></div>
           </div>
         </li>
       </ul>
