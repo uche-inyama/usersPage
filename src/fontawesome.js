@@ -19,4 +19,3 @@ library.add(
   faArrowCircleRight,
   faArrowCircleLeft
 );
-
