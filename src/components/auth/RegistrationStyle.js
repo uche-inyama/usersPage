@@ -8,7 +8,7 @@ export const RegistrationWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size cover;
   background-position: 50% 100%

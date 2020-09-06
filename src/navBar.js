@@ -27,7 +27,7 @@ function NavBar(props) {
           <Link to={`/appointment/${props.current_user}`}>Appointments</Link>
           <div>about</div>
           <div>contact</div>
-          <div class="signout" onClick={handleClick}>sign out</div>
+          <div className="signout" onClick={handleClick}>sign out</div>
         </li>
         <li className="social-media-icons">
           <div className="navEnd">
@@ -43,7 +43,8 @@ function NavBar(props) {
       <nav>
         <ul>
           <li className="logo">
-            <span>Event Centers</span>
+            <p className="event">Event</p>
+            <p className="center">Centers</p>
           </li>
           <li className="navigation">
             <div>about</div>

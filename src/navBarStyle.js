@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 export const NavBarWrapper = styled.div`
 nav{
+  border: solid 1px black;
   height: 100%;
   ul{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 320px;
+    grid-template-rows: 200px 200px 340px;
     grid-gap: 2px;
     justify-content: start;
     height: 100%;

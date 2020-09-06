@@ -50,7 +50,7 @@ export class Registration extends Component {
               />
               <input className="submit" type="submit" />
             </form>
-            <Link className="loginLink" to="/">Login</Link>
+            <span>Returning user </span><Link className="loginLink" to="/">Login</Link>
           </div>
         </div>
       </RegistrationWrapper >

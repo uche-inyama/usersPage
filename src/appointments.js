@@ -13,11 +13,10 @@ const Appointments = ({ appointments }) => {
 
   return (
     <AppointmentWrapper>
-      <h2>Appointment History</h2>
+      <h1>Appointment History</h1>
       {appointmentPerUser.map(appointment => (
         <li key={appointment.id} className="appointment-detail">
-          <div>Visited {appointment.hall} event center,</div>
-          <div>in {appointment.city}.</div>
+          <div className="venue">Venue: {appointment.hall} event center, in {appointment.city} </div>
         </li>
       ))}
     </AppointmentWrapper>

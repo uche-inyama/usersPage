@@ -13,4 +13,7 @@ border: 1px solid gray;
   font-size: 1.5em;
   font-weight: 700;
 }
+.centerList{
+  height: 70%;
+}
 `

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const DetailWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr;
-grid-template-rows: 400px 300px;
+grid-template-rows: 400px 350px;
 grid-gap: 5px;
   .top-wrapper{
     display: grid;

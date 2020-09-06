@@ -59,7 +59,7 @@ export class Login extends Component {
                 />
                 <input className="submit" type="submit" value="Login" />
               </form>
-              <Link to="/register" className="register-link"> Sign up</Link>
+              <span>New user</span><Link to="/register" className="register-link"> Sign up</Link>
             </div>
           </div>
         </LoginWrapper>
