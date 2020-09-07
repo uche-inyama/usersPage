@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 const SliderContent = styled.div`
   transform: translateX(-${props => props.translate}px);
@@ -7,5 +6,5 @@ const SliderContent = styled.div`
   height: 100%;
   width: ${props => props.width}px;
   display: flex;
-`
-export default SliderContent
+`;
+export default SliderContent;

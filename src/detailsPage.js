@@ -1,64 +1,82 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { sheduleMeeting } from './action'
-import { DetailWrapper } from './detailStyle';
+import { sheduleMeeting } from './action';
+import DetailWrapper from './detailStyle';
 
 export const DetailPage = ({ centers, bookings }) => {
-  let { id } = useParams();
-  const [email, setEmailAddress] = useState('')
-  const [useCity, setCity] = useState('')
+  const { id } = useParams();
+  const [email, setEmailAddress] = useState('');
+  const [useCity, setCity] = useState('');
 
-  const center = centers.find(element => element.id === parseInt(id))
+  const center = centers.find(element => element.id === parseInt(id, 10));
   const image = center ? center.image : '';
-  const hall = center ? center.hall : '';
+  // const hall = center ? center.hall : '';
   const building = center ? center.building : '';
   const price = center ? center.price : '';
   const capacity = center ? center.capacity : '';
   const state = center ? center.state : '';
   const city = center ? center.city : '';
 
+  const imageUrl = `"http://localhost:3002${image}"`;
 
+  const currentUser = localStorage.getItem('current_user');
 
-  let image_url = `"http://localhost:3002${image}"`;
+  const emailChangeHandler = e => {
+    e.preventDefault();
+    setEmailAddress(e.target.value);
+  };
 
-  const current_user = localStorage.getItem('current_user');
+  const cityChangeHandler = e => {
+    e.preventDefault();
+    setCity(e.target.value);
+  };
 
-  const emailChangeHandler = (e) => {
-    e.preventDefault()
-    setEmailAddress(e.target.value)
-  }
-
-  const cityChangeHandler = (e) => {
-    e.preventDefault()
-    setCity(e.target.value)
-  }
-
-  const submitHandler = (e) => {
-    e.preventDefault()
+  const submitHandler = e => {
+    e.preventDefault();
     const data = new FormData(e.target);
     bookings(data);
     setEmailAddress('');
     setCity('');
-  }
+  };
 
   return (
     <DetailWrapper>
       <div className="top-wrapper">
         <div className="image-wrapper">
-          <div className="image"
+          <div
+            className="image"
             style={{
-              backgroundImage: `url(${image_url})`,
+              backgroundImage: `url(${imageUrl})`,
             }}
           />
         </div>
         <div className="details">
           <ul>
-            <li>Building: {building}</li>
-            <li>Location: {city} city </li>
-            <li>State: {state} </li>
-            <li>Capacity: {capacity}</li>
-            <li>Price: {price} </li>
+            <li>
+              Building:
+              {building}
+            </li>
+            <li>
+              Location:
+              {city}
+              {' '}
+              city
+              {' '}
+            </li>
+            <li>
+              State:
+              {state}
+            </li>
+            <li>
+              Capacity:
+              {capacity}
+            </li>
+            <li>
+              Price:
+              {price}
+            </li>
           </ul>
         </div>
       </div>
@@ -66,49 +84,76 @@ export const DetailPage = ({ centers, bookings }) => {
       <div className="book-appointment">
         <h2>Book an Appointment with us.</h2>
         <form onSubmit={submitHandler}>
-          <input type="text"
+          <input
+            type="text"
             name="appointment[username]"
-            value={current_user}
-            readOnly={true}
-          /><br />
+            value={currentUser}
+            readOnly
+          />
+          <br />
 
-          <input type="text"
+          <input
+            type="text"
             name="appointment[hall]"
             value={center ? center.hall : ''}
-            readOnly={true}
-          /> <br />
+            readOnly
+          />
+          {' '}
+          <br />
 
-          <input type="text"
+          <input
+            type="text"
             name="appointment[email]"
             onChange={emailChangeHandler}
-            placeholder='email'
+            placeholder="email"
             value={email}
-          /><br />
-          <input type="text"
+          />
+          <br />
+          <input
+            type="text"
             name="appointment[city]"
             onChange={cityChangeHandler}
-            placeholder='city'
+            placeholder="city"
             value={useCity}
-          /><br />
+          />
+          <br />
           <input type="submit" value="submit" />
         </form>
       </div>
     </DetailWrapper>
-  )
-}
+  );
+};
 
-const mapStateToProps = (state) => {
-  return {
-    centers: state.centers
-  }
-}
+DetailPage.propTypes = {
+  centers: PropTypes.arrayOf(
+    PropTypes.shape({
+      building: PropTypes.string.isRequired,
+      hall: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      state: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      capacity: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  bookings: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      hall: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    bookings: ((data) => {
-      dispatch(sheduleMeeting(data))
-    })
-  }
-}
+const mapStateToProps = state => ({
+  centers: state.centers,
+});
+
+const mapDispatchToProps = dispatch => ({
+  bookings: (data => {
+    dispatch(sheduleMeeting(data));
+  }),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);

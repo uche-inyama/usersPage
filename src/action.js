@@ -5,111 +5,98 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const BOOK_APPOINTMENT = 'SHEDULE_APPOINTMENT';
 export const GET_APPOINTMENTS = 'SET_APPOINTMENTS';
 
-export const getCenters = (centers) => {
-  return {
-    type: GET_CENTERS,
-    centers
-  }
-}
+export const getCenters = centers => ({
+  type: GET_CENTERS,
+  centers,
+});
 
-export const getCenter = (id) => {
-  return {
-    type: GET_CENTER,
-    id
-  }
-}
+export const getCenter = id => ({
+  type: GET_CENTER,
+  id,
+});
 
-export const postUser = (user) => {
-  return {
-    type: POST_USER,
-    user
-  }
-}
+export const postUser = user => ({
+  type: POST_USER,
+  user,
+});
 
-export const getAppointments = (appointments) => {
-  return {
-    type: GET_APPOINTMENTS,
-    appointments
-  }
-}
+export const getAppointments = appointments => ({
+  type: GET_APPOINTMENTS,
+  appointments,
+});
 
-export const bookAppointment = (booking) => {
-  return {
-    type: BOOK_APPOINTMENT,
-    booking
-  }
-}
+export const bookAppointment = booking => ({
+  type: BOOK_APPOINTMENT,
+  booking,
+});
 
 export const receiveCenters = () => {
-  const url = `http://localhost:3002/api/v1/centers`
+  const url = 'http://localhost:3002/api/v1/centers';
   return dispatch => {
     fetch(url, {
       method: 'GET',
-      mode: 'cors'
+      mode: 'cors',
     })
       .then(response => response.json())
       .then(data => {
-        dispatch(getCenters(data))
+        dispatch(getCenters(data));
       });
-  }
-}
+  };
+};
 
-export const receiveUser = (data) => {
-  const url = `http://localhost:3002/registrations`
+export const receiveUser = data => {
+  const url = 'http://localhost:3002/registrations';
   return dispatch => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
-      body: data
+      body: data,
     })
       .then(response => response.json())
-      .then(data => dispatch(postUser(data)))
-  }
-}
+      .then(data => dispatch(postUser(data)));
+  };
+};
 
-export const sheduleMeeting = (data) => {
-  const url = `http://localhost:3002/appointments`
+export const sheduleMeeting = data => {
+  const url = 'http://localhost:3002/appointments';
   return dispatch => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
-      body: data
+      body: data,
     })
       .then(response => response.json())
-      .then(({ appointment }) =>
-        dispatch(bookAppointment(appointment)))
-  }
-}
+      .then(({ appointment }) => dispatch(bookAppointment(appointment)));
+  };
+};
 
-export const receiveAppointments = (username) => {
-  const url = `http://localhost:3002/appointments/${username}`
+export const receiveAppointments = username => {
+  const url = `http://localhost:3002/appointments/${username}`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
-      mode: 'cors'
+      mode: 'cors',
     })
       .then(response => response.json())
       .then(({ appointments }) => {
-        dispatch(getAppointments(appointments))
+        dispatch(getAppointments(appointments));
       });
-  }
-}
+  };
+};
 
 export const authenticateUser = (data, cb) => {
-  console.log(data);
-  const url = `http://localhost:3002/sessions`
-  return dispatch => {
+  const url = 'http://localhost:3002/sessions';
+  return () => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
-      body: data
+      body: data,
     },
-      { withCredentials: true }
-    )
+    { withCredentials: true })
       .then(response => response.json())
       .then(({ current_user }) => {
-        localStorage.setItem('current_user', current_user.username)
+        localStorage.setItem('current_user', current_user.username);
         cb();
       });
   };
-}
+};

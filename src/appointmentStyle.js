@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const AppointmentWrapper = styled.ul`
+const AppointmentWrapper = styled.ul`
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: 100px;
@@ -25,4 +25,5 @@ h1{
   font-weight: 700;
   font-size: 1.4em;
 }
-`
+`;
+export default AppointmentWrapper;

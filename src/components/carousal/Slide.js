@@ -1,17 +1,14 @@
 /** @jsx jsx */
-import React from 'react'
-import { css, jsx } from '@emotion/core'
-import { Link } from 'react-router-dom'
-
+import { css, jsx } from '@emotion/core';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Slide = ({ content, id }) => {
-  console.log(content);
-  console.log(id)
   const url = `http://localhost:3002${content}`;
-  const detailsPath = `/details/${id}`
-  console.log(detailsPath)
+  const detailsPath = `/details/${id}`;
   return (
-    <Link to={detailsPath}
+    <Link
+      to={detailsPath}
       css={css`
       height: 100%;
       width: 100%;
@@ -23,9 +20,12 @@ const Slide = ({ content, id }) => {
       // color:blue;
     `}
     />
-  )
-}
+  );
+};
 
+Slide.propTypes = {
+  content: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
-export default Slide
-
+export default Slide;

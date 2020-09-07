@@ -1,75 +1,84 @@
 import React, { Component } from 'react';
-import { receiveUser } from '../../action';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RegistrationWrapper } from './RegistrationStyle';
-import image from '../../asset/image/eventCenter.jpg'
-
+import { receiveUser } from '../../action';
+import RegistrationWrapper from './RegistrationStyle';
+import image from '../../asset/image/eventCenter.jpg';
 
 export class Registration extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-    }
+      username: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(e) {
+    const { loadUsers } = this.props;
+    const { history } = this.props;
     e.preventDefault();
-    let data = new FormData(e.target)
-    this.props.loadUsers(data);
-    this.props.history.push('/')
+    const data = new FormData(e.target);
+    loadUsers(data);
+    history.push('/');
   }
 
   handleChange(e, name) {
     // e.preventDefault();
     this.setState({
-      [name]: e.target.value
-    })
+      [name]: e.target.value,
+    });
   }
 
   render() {
+    const { username } = this.state;
     return (
       <RegistrationWrapper>
         <div
           className="image"
           style={{
-            backgroundImage: `url(${image})`
+            backgroundImage: `url(${image})`,
           }}
         >
           <div className="registerationWrapper">
             <form onSubmit={this.handleSubmit}>
-              <input className="field" type="text"
+              <input
+                className="field"
+                type="text"
                 name="user[username]"
-                value={this.state.username}
-                onChange={(e) => { this.handleChange(e, 'username') }}
+                value={username}
+                onChange={e => { this.handleChange(e, 'username'); }}
                 required
               />
               <input className="submit" type="submit" />
             </form>
-            <span>Returning user </span><Link className="loginLink" to="/">Login</Link>
+            <span>Returning user </span>
+            <Link className="loginLink" to="/">Login</Link>
           </div>
         </div>
-      </RegistrationWrapper >
-    )
+      </RegistrationWrapper>
+    );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    users: state.users
-  }
-}
+const mapStateToProps = state => ({
+  users: state.users,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loadUsers: ((data) => {
-      dispatch(receiveUser(data))
-    })
-  }
-}
+Registration.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  loadUsers: PropTypes.func.isRequired,
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Registration)
+const mapDispatchToProps = dispatch => ({
+  loadUsers: (data => {
+    dispatch(receiveUser(data));
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);

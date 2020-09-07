@@ -1,29 +1,31 @@
+/* eslint import/no-named-as-default: 0 */
 import React, { Component } from 'react';
-import { authenticateUser } from '../../action';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { LoginWrapper } from './loginStyle'
-import image from '../../asset/image/eventCenter.jpg'
+import { authenticateUser } from '../../action';
+import LoginWrapper from './loginStyle';
+import image from '../../asset/image/eventCenter.jpg';
 
 export class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-      current_user: {}
-    }
+      username: '',
+    };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
+    const { history } = this.props;
+    const { loginUser } = this.props;
     e.preventDefault();
-    let data = new FormData(e.target);
+    const data = new FormData(e.target);
     try {
-      this.props.loginUser(data, () => {
-        console.log(this.props.history)
-        this.props.history.push('/Home');
+      loginUser(data, () => {
+        history.push('/Home');
       });
     } catch (error) {
       console.error(error);
@@ -33,18 +35,19 @@ export class Login extends Component {
   handleChange(e, name) {
     // e.preventDefault();
     this.setState({
-      [name]: e.target.value
-    })
+      [name]: e.target.value,
+    });
   }
 
   render() {
+    const { username } = this.state;
     return (
       <>
         <LoginWrapper>
           <div
             className="image"
             style={{
-              backgroundImage: `url(${image})`
+              backgroundImage: `url(${image})`,
             }}
           >
             <div className="formWrapper">
@@ -53,27 +56,33 @@ export class Login extends Component {
                   className="field"
                   type="text"
                   name="user[username]"
-                  onChange={(e) => { this.handleChange(e, 'username') }}
-                  value={this.state.username}
+                  onChange={e => { this.handleChange(e, 'username'); }}
+                  value={username}
                   required
                 />
                 <input className="submit" type="submit" value="Login" />
               </form>
-              <span>New user</span><Link to="/register" className="register-link"> Sign up</Link>
+              <span>New user</span>
+              <Link to="/register" className="register-link"> Sign up</Link>
             </div>
           </div>
         </LoginWrapper>
       </>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loginUser: ((user, cb) => {
-      dispatch(authenticateUser(user, cb));
-    })
-  }
-}
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
-export default connect(null, mapDispatchToProps)(Login)
+const mapDispatchToProps = dispatch => ({
+  loginUser: ((user, cb) => {
+    dispatch(authenticateUser(user, cb));
+  }),
+});
+
+export default connect(null, mapDispatchToProps)(Login);

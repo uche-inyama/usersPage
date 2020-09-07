@@ -6,10 +6,10 @@ import rootReducer from './rootReducer';
 export const initStore = () => createStore(
   rootReducer,
   composeWithDevTools(
-    applyMiddleware(thunk)
-  )
+    applyMiddleware(thunk),
+  ),
 );
 
-const store = initStore()
+const store = initStore();
 
-export default store
+export default store;

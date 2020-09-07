@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
-export const LoginWrapper = styled.div`
+const LoginWrapper = styled.div`
 .image{
   display: flex;
   flex-direction: column;
@@ -35,4 +34,5 @@ form {
   text-decoration: none;
   font-weight: 700;
 }
-`
+`;
+export default LoginWrapper;

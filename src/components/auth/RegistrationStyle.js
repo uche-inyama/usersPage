@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-
-export const RegistrationWrapper = styled.div`
+const RegistrationWrapper = styled.div`
 .image{
   display: flex;
   flex-direction: column;
@@ -35,4 +34,6 @@ export const RegistrationWrapper = styled.div`
     text-decoration: none;
     font-weight: 700;
   }
-`
+`;
+
+export default RegistrationWrapper;

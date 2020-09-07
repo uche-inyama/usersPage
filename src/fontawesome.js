@@ -1,14 +1,14 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 import {
   faTwitter, faFacebook,
   faPinterest, faInstagram, faSnapchatGhost,
 
-} from '@fortawesome/free-brands-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
 
 import {
-  faArrowCircleRight, faArrowCircleLeft
-} from '@fortawesome/free-solid-svg-icons'
+  faArrowCircleRight, faArrowCircleLeft,
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faTwitter,
@@ -17,5 +17,5 @@ library.add(
   faInstagram,
   faSnapchatGhost,
   faArrowCircleRight,
-  faArrowCircleLeft
+  faArrowCircleLeft,
 );

@@ -1,16 +1,16 @@
-import React from 'react'
-import { render, screen, fireEvent } from '@testing-library/react';
-import { Router } from 'react-router-dom'
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { CenterCard } from './centerCard'
+import { CenterCard } from './centerCard';
 
 describe('CenterCard', () => {
   it('checks for text', () => {
-    let history = createMemoryHistory()
-    const hall = "Alvan"
-    const building = "Taj"
-    const price = 200
-    const capacity = 300
+    const history = createMemoryHistory();
+    const hall = 'Alvan';
+    const building = 'Taj';
+    const price = 200;
+    const capacity = 300;
     render(
       <Router history={history}>
         <CenterCard
@@ -19,12 +19,12 @@ describe('CenterCard', () => {
           price={price}
           capacity={capacity}
         />
-      </Router>
-    )
-    expect(screen.queryByText(/click here for details/)).toBeInTheDocument()
-    expect(screen.queryByText(/Alvan/))
-    expect(screen.queryByText(/Taj/))
-    expect(screen.queryByText(/200/))
-    expect(screen.queryByText(/300/))
-  })
-})
+      </Router>,
+    );
+    expect(screen.queryByText(/click here for details/)).toBeInTheDocument();
+    expect(screen.queryByText(/Alvan/));
+    expect(screen.queryByText(/Taj/));
+    expect(screen.queryByText(/200/));
+    expect(screen.queryByText(/300/));
+  });
+});

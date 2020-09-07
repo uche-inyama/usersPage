@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-
-export const NavBarWrapper = styled.div`
+const NavBarWrapper = styled.div`
 nav{
   border: solid 1px black;
   height: 100%;
@@ -50,4 +49,6 @@ nav{
     }
   }
 }
-` ;
+`;
+
+export default NavBarWrapper;

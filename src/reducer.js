@@ -1,38 +1,38 @@
 import {
   GET_CENTERS,
-  GET_CENTER,
+  // GET_CENTER,
   POST_USER,
   BOOK_APPOINTMENT,
   GET_APPOINTMENTS,
-} from '../src/action'
+} from './action';
 
 export const centers = (state = [], action) => {
   switch (action.type) {
     case GET_CENTERS:
-      return [...state, ...action.centers]
-    case GET_CENTER:
-      return
+      return [...state, ...action.centers];
+    // case GET_CENTER:
+    //   return;
     default:
-      return state
+      return state;
   }
-}
+};
 
 export const user = (state = null, action) => {
   switch (action.type) {
     case POST_USER:
-      return action.user
+      return action.user;
     default:
-      return state
+      return state;
   }
-}
+};
 
 export const appointmentBookings = (state = [], action) => {
   switch (action.type) {
     case BOOK_APPOINTMENT:
-      return [...state, action.booking]
+      return [...state, action.booking];
     case GET_APPOINTMENTS:
-      return [...state, ...action.appointments]
+      return [...state, ...action.appointments];
     default:
-      return state
+      return state;
   }
-}
+};

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-
-export const HallImageWrapper = styled.div`
+const HallImageWrapper = styled.div`
   .image-wrapper {
     width: 95%;
     height: 350px;
@@ -19,4 +18,6 @@ export const HallImageWrapper = styled.div`
     height: 40px;
     padding: 10px;
   }
-` ;
+`;
+
+export default HallImageWrapper;

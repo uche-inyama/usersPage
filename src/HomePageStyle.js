@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const HomePageWrapper = styled.div`
+const HomePageWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: 200px 520px;
@@ -16,4 +16,5 @@ border: 1px solid gray;
 .centerList{
   height: 90%;
 }
-`
+`;
+export default HomePageWrapper;

@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import React from 'react'
-import { css, jsx } from '@emotion/core'
-
+import { css, jsx } from '@emotion/core';
+import PropTypes from 'prop-types';
 
 const Arrow = ({ direction, handleClick }) => (
   <div
@@ -10,7 +9,7 @@ const Arrow = ({ direction, handleClick }) => (
       display: flex;
       position: absolute;
       top: 50%;
-      ${direction === 'right' ? `right: 25px` : `left: 25px`};
+      ${direction === 'right' ? 'right: 25px' : 'left: 25px'};
       height: 50px;
       width: 50px;
       justify-content: center;
@@ -30,8 +29,13 @@ const Arrow = ({ direction, handleClick }) => (
       }
     `}
   >
-    {direction === 'right' ? `>>` : `<<`}
+    {direction === 'right' ? '>>' : '<<'}
   </div>
-)
+);
 
-export default Arrow
+Arrow.propTypes = {
+  direction: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
+export default Arrow;
