@@ -1,6 +1,7 @@
 import React from 'react';
 import CenterCard from './centerCard';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { HomePageWrapper } from './HomePageStyle';
 import Slider from './components/carousal/Slider'
 const HomePage = ({ centers }) => {
@@ -14,47 +15,13 @@ const HomePage = ({ centers }) => {
         </div>
         <main>
           <div className="centerList">
-            {/* <ul>
-              {centers.map((center) => {
-                return (
-                  <CenterCard
-                    id={center.id}
-                    key={center.id}
-                    hallname={center.hall}
-                    image={center.image}
-                  />
-                )
-              })}
-            </ul> */}
             <Slider centers={centers} />
           </div>
+          <span>Click on the image for details</span>
         </main>
       </HomePageWrapper>
     )
   }
-  // else {
-  // return (
-  // <HomePageWrapper className="container">
-  //   <main>
-  //     <div className="centerList">
-  //       <ul>
-  //         {centers.map((center) => {
-  //           return (
-  //             <CenterCard
-  //               id={center.id}
-  //               key={center.id}
-  //               hallname={center.hall}
-  //               image={center.image}
-  //             />
-  //           )
-  //         })}
-  //       </ul>
-  //     </div>
-  //   </main>
-  // </HomePageWrapper>
-  // )
-  // }
-
 }
 
 const mapStateToProps = (state) => {
@@ -62,5 +29,4 @@ const mapStateToProps = (state) => {
     centers: state.centers
   }
 }
-// export default HomePage;
 export default connect(mapStateToProps, null)(HomePage);

@@ -14,6 +14,6 @@ border: 1px solid gray;
   font-weight: 700;
 }
 .centerList{
-  height: 70%;
+  height: 90%;
 }
 `

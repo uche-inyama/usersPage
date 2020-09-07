@@ -7,7 +7,7 @@ import { DetailWrapper } from './detailStyle';
 export const DetailPage = ({ centers, bookings }) => {
   let { id } = useParams();
   const [email, setEmailAddress] = useState('')
-  const [city, setCity] = useState('')
+  const [useCity, setCity] = useState('')
 
   const center = centers.find(element => element.id === parseInt(id))
   const image = center ? center.image : '';
@@ -16,6 +16,9 @@ export const DetailPage = ({ centers, bookings }) => {
   const price = center ? center.price : '';
   const capacity = center ? center.capacity : '';
   const state = center ? center.state : '';
+  const city = center ? center.city : '';
+
+
 
   let image_url = `"http://localhost:3002${image}"`;
 
@@ -85,7 +88,7 @@ export const DetailPage = ({ centers, bookings }) => {
             name="appointment[city]"
             onChange={cityChangeHandler}
             placeholder='city'
-            value={city}
+            value={useCity}
           /><br />
           <input type="submit" value="submit" />
         </form>

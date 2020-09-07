@@ -9,7 +9,6 @@ import Arrow from './Arrow'
  * @function Slider
  */
 const Slider = ({ centers }) => {
-  console.log(centers)
   const getWidth = () => window.innerWidth;
 
   const [state, setState] = useState({
@@ -59,6 +58,7 @@ const Slider = ({ centers }) => {
       >
         {centers.map(center => <Slide
           key={center.id}
+          id={center.id}
           content={center.image}
         />)}
 
@@ -71,7 +71,7 @@ const Slider = ({ centers }) => {
 
 const SliderCSS = css`
   position: relative;
-  height: 50vh;
+  height: 45vh;
   width: 80vw;
   margin: 0 auto;
   overflow: hidden;
