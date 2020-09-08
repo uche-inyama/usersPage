@@ -6,6 +6,7 @@ export const BOOK_APPOINTMENT = 'SHEDULE_APPOINTMENT';
 export const GET_APPOINTMENTS = 'SET_APPOINTMENTS';
 export const ADD_USER = 'ADD_USER';
 export const REMOVE_USER = 'REMOVE_USER';
+export const NOT_LOGGED_IN = 'NOT_LOGGED_IN';
 
 export const getCenters = centers => ({
   type: GET_CENTERS,
@@ -39,6 +40,11 @@ export const addUser = username => ({
 
 export const removeUser = () => ({
   type: REMOVE_USER,
+});
+
+export const notLoggedIn = status => ({
+  type: NOT_LOGGED_IN,
+  status,
 });
 
 export const receiveCenters = () => {
@@ -105,10 +111,12 @@ export const authenticateUser = (data, cb) => {
     },
     { withCredentials: true })
       .then(response => response.json())
-      .then(({ currentUser }) => {
-        localStorage.setItem('current_user', currentUser.username);
-        dispatch(addUser(currentUser.username));
-        cb();
+      .then(({ status, currentUser }) => {
+        if (status === 'created') {
+          localStorage.setItem('current_user', currentUser.username);
+          dispatch(addUser(currentUser.username));
+          cb();
+        } else (dispatch(notLoggedIn(status)));
       });
   };
 };

@@ -2,6 +2,7 @@ import {
   GET_CENTERS,
   ADD_USER,
   REMOVE_USER,
+  NOT_LOGGED_IN,
   // GET_CENTER,
   POST_USER,
   BOOK_APPOINTMENT,
@@ -34,6 +35,15 @@ export const currentUser = (state = null, action) => {
       return action.username;
     case REMOVE_USER:
       return null;
+    default:
+      return state;
+  }
+};
+
+export const status = (state = null, action) => {
+  switch (action.type) {
+    case NOT_LOGGED_IN:
+      return action.status;
     default:
       return state;
   }

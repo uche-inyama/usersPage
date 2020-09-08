@@ -8,17 +8,16 @@ import {
   receiveCenters,
   receiveAppointments,
   removeUser,
-} from './action';
-import HomePage from './homePage';
-import DetailsPage from './detailsPage';
-import Register from './components/auth/Registration';
-import Login from './components/auth/Login';
-import Appointments from './appointments';
-import NavBar from './navBar';
+} from '../../action';
+import HomePage from '../homePage/homePage';
+import DetailsPage from '../details/detailsPage';
+import Register from '../auth/Registration';
+import Login from '../auth/Login';
+import Appointments from '../appointments/appointments';
+import NavBar from '../navBar/navBar';
 import AppWrapper from './AppStyle';
 import AppContainerStyle from './appContainerStyle';
-import './App.css';
-import './reset.css';
+import '../../reset.css';
 
 function App({
   loadCenters, loadAppointments, currentUser, logOut,
@@ -49,10 +48,14 @@ function App({
   );
 }
 
+App.defaultProps = {
+  currentUser: null,
+};
+
 App.propTypes = {
   loadCenters: PropTypes.func.isRequired,
   loadAppointments: PropTypes.func.isRequired,
-  currentUser: PropTypes.string.isRequired,
+  currentUser: PropTypes.string,
   logOut: PropTypes.func.isRequired,
 };
 

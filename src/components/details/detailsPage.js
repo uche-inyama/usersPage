@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { sheduleMeeting } from './action';
+import { sheduleMeeting } from '../../action';
 import DetailWrapper from './detailStyle';
 
 export const DetailPage = ({ centers, bookings }) => {

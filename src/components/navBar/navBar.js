@@ -7,7 +7,6 @@ import NavBarWrapper from './navBarStyle';
 
 function NavBar({ currentUser, logOut }) {
   const history = useHistory();
-
   function handleClick(e) {
     e.preventDefault();
     localStorage.removeItem('current_user');
@@ -25,8 +24,6 @@ function NavBar({ currentUser, logOut }) {
           </li>
           <li className="navigation">
             <Link to={`/appointment/${currentUser}`}>Appointments</Link>
-            <div>about</div>
-            <div>contact</div>
             <div className="signout" onClick={handleClick}>sign out</div>
           </li>
           <li className="social-media-icons">
@@ -48,10 +45,6 @@ function NavBar({ currentUser, logOut }) {
               <p className="event">Event</p>
               <p className="center">Centers</p>
             </li>
-            <li className="navigation">
-              <div>about</div>
-              <div>contact</div>
-            </li>
           </ul>
         </nav>
       </>
@@ -61,8 +54,12 @@ function NavBar({ currentUser, logOut }) {
   );
 }
 
+NavBar.defaultProps = {
+  currentUser: null,
+};
+
 NavBar.propTypes = {
-  currentUser: PropTypes.string.isRequired,
+  currentUser: PropTypes.string,
   logOut: PropTypes.func.isRequired,
 };
 

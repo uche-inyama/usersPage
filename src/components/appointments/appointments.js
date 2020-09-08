@@ -17,8 +17,11 @@ const Appointments = ({ appointments }) => {
         <li key={appointment.id} className="appointment-detail">
           <div className="venue">
             Venue:
+            {' '}
             {appointment.hall}
+            {' '}
             event center, in
+            {' '}
             {appointment.city}
           </div>
         </li>

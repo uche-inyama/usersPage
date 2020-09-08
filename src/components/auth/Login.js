@@ -19,21 +19,15 @@ export class Login extends Component {
   }
 
   handleSubmit(e) {
-    const { history } = this.props;
-    const { loginUser } = this.props;
+    const { history, loginUser } = this.props;
     e.preventDefault();
     const data = new FormData(e.target);
-    try {
-      loginUser(data, () => {
-        history.push('/Home');
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    loginUser(data, () => {
+      history.push('/Home');
+    });
   }
 
   handleChange(e, name) {
-    // e.preventDefault();
     this.setState({
       [name]: e.target.value,
     });
@@ -85,4 +79,8 @@ const mapDispatchToProps = dispatch => ({
   }),
 });
 
-export default connect(null, mapDispatchToProps)(Login);
+const mapStateToProps = state => ({
+  status: state.status,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
