@@ -52,7 +52,7 @@ const Slider = ({ centers }) => {
 
   const SliderCSS = css`
   position: relative;
-  height: 45vh;
+  height: 60vh;
   width: 80vw;
   margin: 0 auto;
   overflow: hidden;

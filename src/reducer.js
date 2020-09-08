@@ -1,5 +1,7 @@
 import {
   GET_CENTERS,
+  ADD_USER,
+  REMOVE_USER,
   // GET_CENTER,
   POST_USER,
   BOOK_APPOINTMENT,
@@ -21,6 +23,17 @@ export const user = (state = null, action) => {
   switch (action.type) {
     case POST_USER:
       return action.user;
+    default:
+      return state;
+  }
+};
+
+export const currentUser = (state = null, action) => {
+  switch (action.type) {
+    case ADD_USER:
+      return action.username;
+    case REMOVE_USER:
+      return null;
     default:
       return state;
   }

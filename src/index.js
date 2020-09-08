@@ -5,7 +5,12 @@ import './fontawesome';
 import './index.css';
 import App from './App';
 import store from './store';
+import { addUser } from './action';
 
+const user = localStorage.getItem('current_user');
+if (user) {
+  store.dispatch(addUser(user));
+}
 ReactDOM.render(
   <Provider store={store}>
     <App />

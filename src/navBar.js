@@ -5,12 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import NavBarWrapper from './navBarStyle';
 
-function NavBar({ currentUser }) {
+function NavBar({ currentUser, logOut }) {
   const history = useHistory();
 
   function handleClick(e) {
     e.preventDefault();
     localStorage.removeItem('current_user');
+    logOut();
     history.push('/');
   }
 
@@ -62,6 +63,7 @@ function NavBar({ currentUser }) {
 
 NavBar.propTypes = {
   currentUser: PropTypes.string.isRequired,
+  logOut: PropTypes.func.isRequired,
 };
 
 export default NavBar;

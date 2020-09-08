@@ -129,21 +129,13 @@ DetailPage.propTypes = {
     PropTypes.shape({
       building: PropTypes.string.isRequired,
       hall: PropTypes.string.isRequired,
-      address: PropTypes.string.isRequired,
       city: PropTypes.string.isRequired,
       state: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       capacity: PropTypes.number.isRequired,
     }),
   ).isRequired,
-  bookings: PropTypes.arrayOf(
-    PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      hall: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  bookings: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

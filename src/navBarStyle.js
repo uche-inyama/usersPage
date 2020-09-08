@@ -7,7 +7,7 @@ nav{
   ul{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 340px;
+    grid-template-rows: 200px 200px 250px;
     grid-gap: 2px;
     justify-content: start;
     height: 100%;
@@ -33,7 +33,6 @@ nav{
       } 
     }
     .social-media-icons{
-      padding-bottom: 30px;
       .navEnd{
         display: flex;
         flex-direction: row;

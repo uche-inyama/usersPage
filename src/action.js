@@ -4,6 +4,8 @@ export const POST_USER = 'POST_USER';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const BOOK_APPOINTMENT = 'SHEDULE_APPOINTMENT';
 export const GET_APPOINTMENTS = 'SET_APPOINTMENTS';
+export const ADD_USER = 'ADD_USER';
+export const REMOVE_USER = 'REMOVE_USER';
 
 export const getCenters = centers => ({
   type: GET_CENTERS,
@@ -28,6 +30,15 @@ export const getAppointments = appointments => ({
 export const bookAppointment = booking => ({
   type: BOOK_APPOINTMENT,
   booking,
+});
+
+export const addUser = username => ({
+  type: ADD_USER,
+  username,
+});
+
+export const removeUser = () => ({
+  type: REMOVE_USER,
 });
 
 export const receiveCenters = () => {
@@ -86,7 +97,7 @@ export const receiveAppointments = username => {
 
 export const authenticateUser = (data, cb) => {
   const url = 'http://localhost:3002/sessions';
-  return () => {
+  return dispatch => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
@@ -94,8 +105,9 @@ export const authenticateUser = (data, cb) => {
     },
     { withCredentials: true })
       .then(response => response.json())
-      .then(({ current_user }) => {
-        localStorage.setItem('current_user', current_user.username);
+      .then(({ currentUser }) => {
+        localStorage.setItem('current_user', currentUser.username);
+        dispatch(addUser(currentUser.username));
         cb();
       });
   };
