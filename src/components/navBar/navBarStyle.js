@@ -22,14 +22,17 @@ nav{
     .navigation{
       display: grid;
       grid-template-columns: 1fr;
+      grid-gap: 50px;
       text-align: center;
       font-size: 1.2em;  
+      height: 50%;
       .signout{
         border: solid 1px black;
         width: 100px;
         height: 25px;
         margin-left: 10px;
         padding-top: 6px;
+        cursor: pointer;
       } 
     }
     .social-media-icons{

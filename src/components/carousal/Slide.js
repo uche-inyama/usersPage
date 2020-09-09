@@ -15,7 +15,7 @@ const Slide = ({ content, id }) => {
       background-image: url(${url});
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: 50% 80%;
       cursor: pointer;
       // color:blue;
     `}
