@@ -58,12 +58,16 @@ export const Login = ({
   );
 };
 
+Login.defaultProps = {
+  status: null
+}
+
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string,
   updateStatus: PropTypes.func.isRequired,
 };
 
