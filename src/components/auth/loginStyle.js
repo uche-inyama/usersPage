@@ -12,6 +12,11 @@ const LoginWrapper = styled.div`
   background-size cover;
   background-position: 50% 100%
 }
+.status{
+  padding: 10px;
+  font-size: 1.2em;
+  color: #fff;
+}
 .formWrapper{
   padding: 20px;
   background-color: gray;

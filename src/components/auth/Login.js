@@ -1,69 +1,64 @@
 /* eslint import/no-named-as-default: 0 */
-import React, { Component } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { authenticateUser } from '../../action';
+import { authenticateUser, clearStatus } from '../../action';
 import LoginWrapper from './loginStyle';
 import image from '../../asset/image/eventCenter.jpg';
 
-export class Login extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      username: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+const Login = ({ status, loginUser, history, updateStatus }) => {
+
+  const [username, setUsername] = useState('')
+
+  const name = () => {
+    window.alert('uche')
   }
-
-  handleSubmit(e) {
-    const { history, loginUser } = this.props;
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setTimeout(updateStatus, 4 * 1000);
     const data = new FormData(e.target);
     loginUser(data, () => {
       history.push('/Home');
     });
   }
 
-  handleChange(e, name) {
-    this.setState({
-      [name]: e.target.value,
-    });
-  }
-
-  render() {
-    const { username } = this.state;
-    return (
-      <>
-        <LoginWrapper>
-          <div
-            className="image"
-            style={{
-              backgroundImage: `url(${image})`,
-            }}
-          >
-            <div className="formWrapper">
-              <form onSubmit={this.handleSubmit}>
-                <input
-                  className="field"
-                  type="text"
-                  name="user[username]"
-                  onChange={e => { this.handleChange(e, 'username'); }}
-                  value={username}
-                  required
-                />
-                <input className="submit" type="submit" value="Login" />
-              </form>
-              <span>New user</span>
-              <Link to="/register" className="register-link"> Sign up</Link>
-            </div>
-          </div>
-        </LoginWrapper>
-      </>
+  const handleChange = (e, name) => {
+    setUsername(
+      e.target.value
     );
   }
+
+  return (
+    <>
+      <LoginWrapper>
+        <div
+          className="image"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <div className="status">{status}</div>
+          <div className="formWrapper">
+            <form onSubmit={handleSubmit}>
+              <input
+                className="field"
+                type="text"
+                name="user[username]"
+                onChange={e => { handleChange(e, 'username'); }}
+                value={username}
+                required
+              />
+              <input className="submit" type="submit" value="Login" />
+            </form>
+            <span>New user</span>
+            <Link to="/register" className="register-link"> Sign up</Link>
+          </div>
+        </div>
+      </LoginWrapper>
+    </>
+  );
 }
 
 Login.propTypes = {
@@ -77,6 +72,9 @@ const mapDispatchToProps = dispatch => ({
   loginUser: ((user, cb) => {
     dispatch(authenticateUser(user, cb));
   }),
+  updateStatus: (() => {
+    dispatch(clearStatus())
+  })
 });
 
 const mapStateToProps = state => ({

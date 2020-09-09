@@ -3,6 +3,7 @@ import {
   ADD_USER,
   REMOVE_USER,
   NOT_LOGGED_IN,
+  CLEAR_STATUS,
   // GET_CENTER,
   POST_USER,
   BOOK_APPOINTMENT,
@@ -44,6 +45,8 @@ export const status = (state = null, action) => {
   switch (action.type) {
     case NOT_LOGGED_IN:
       return action.status;
+    case CLEAR_STATUS:
+      return null
     default:
       return state;
   }
