@@ -53,7 +53,7 @@ export const clearStatus = () => ({
 });
 
 export const receiveCenters = () => {
-  const url = 'http://localhost:3002/api/v1/centers';
+  const url = 'http://localhost:5000/api/v1/centers';
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -67,7 +67,7 @@ export const receiveCenters = () => {
 };
 
 export const receiveUser = data => {
-  const url = 'http://localhost:3002/registrations';
+  const url = 'http://localhost:5000/registrations';
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -80,7 +80,7 @@ export const receiveUser = data => {
 };
 
 export const sheduleMeeting = data => {
-  const url = 'http://localhost:3002/appointments';
+  const url = 'http://localhost:5000/appointments';
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -93,7 +93,7 @@ export const sheduleMeeting = data => {
 };
 
 export const receiveAppointments = username => {
-  const url = `http://localhost:3002/appointments/${username}`;
+  const url = `http://localhost:5000/appointments/${username}`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -107,14 +107,14 @@ export const receiveAppointments = username => {
 };
 
 export const authenticateUser = (data, cb) => {
-  const url = 'http://localhost:3002/sessions';
+  const url = 'http://localhost:5000/sessions';
   return dispatch => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
       body: data,
     },
-    { withCredentials: true })
+      { withCredentials: true })
       .then(response => (response.json()))
       .then(({ status, currentUser }) => {
         if (status === 'created') {
