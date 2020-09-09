@@ -9,7 +9,6 @@ export const REMOVE_USER = 'REMOVE_USER';
 export const NOT_LOGGED_IN = 'NOT_LOGGED_IN';
 export const CLEAR_STATUS = 'CLEAR_STATUS';
 
-
 export const getCenters = centers => ({
   type: GET_CENTERS,
   centers,
@@ -51,7 +50,7 @@ export const notLoggedIn = status => ({
 
 export const clearStatus = () => ({
   type: CLEAR_STATUS,
-})
+});
 
 export const receiveCenters = () => {
   const url = 'http://localhost:3002/api/v1/centers';
@@ -115,14 +114,14 @@ export const authenticateUser = (data, cb) => {
       mode: 'cors',
       body: data,
     },
-      { withCredentials: true })
+    { withCredentials: true })
       .then(response => (response.json()))
       .then(({ status, currentUser }) => {
         if (status === 'created') {
           localStorage.setItem('current_user', currentUser.username);
           dispatch(addUser(currentUser.username));
           cb();
-        } else (dispatch(notLoggedIn("Invalid credentials")));
+        } else (dispatch(notLoggedIn('Invalid credentials')));
       });
   };
 };

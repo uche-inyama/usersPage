@@ -46,7 +46,7 @@ export const status = (state = null, action) => {
     case NOT_LOGGED_IN:
       return action.status;
     case CLEAR_STATUS:
-      return null
+      return null;
     default:
       return state;
   }
