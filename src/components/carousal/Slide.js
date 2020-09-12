@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Slide = ({ content, id }) => {
-  const url = `http://localhost:3002${content}`;
   const detailsPath = `/details/${id}`;
   return (
     <Link
@@ -12,19 +11,22 @@ const Slide = ({ content, id }) => {
       css={css`
       height: 100%;
       width: 100%;
-      background-image: url(${url});
+      background-image: url('${content}');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 80%;
       cursor: pointer;
-      // color:blue;
     `}
     />
   );
 };
 
+Slide.defaultProps = {
+  content: null,
+}
+
 Slide.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
   id: PropTypes.number.isRequired,
 };
 

@@ -59,8 +59,8 @@ export const Login = ({
 };
 
 Login.defaultProps = {
-  status: null
-}
+  status: null,
+};
 
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,

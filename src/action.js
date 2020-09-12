@@ -1,3 +1,5 @@
+import * as imageUrl from './imageUrl';
+
 export const GET_CENTERS = 'GET_CENTERS';
 export const GET_CENTER = 'GET_CENTER';
 export const POST_USER = 'POST_USER';
@@ -53,7 +55,7 @@ export const clearStatus = () => ({
 });
 
 export const receiveCenters = () => {
-  const url = 'https://serene-eyrie-97376.herokuapp.com/api/v1/centers';
+  const url = `${imageUrl.localHost}/api/v1/centers`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -67,7 +69,7 @@ export const receiveCenters = () => {
 };
 
 export const receiveUser = data => {
-  const url = 'https://serene-eyrie-97376.herokuapp.com/registrations';
+  const url = `https://serene-eyrie-97376.herokuapp.com/registrations`;
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -80,7 +82,7 @@ export const receiveUser = data => {
 };
 
 export const sheduleMeeting = data => {
-  const url = 'https://serene-eyrie-97376.herokuapp.com/appointments';
+  const url = `https://serene-eyrie-97376.herokuapp.com/appointments`;
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -107,7 +109,7 @@ export const receiveAppointments = username => {
 };
 
 export const authenticateUser = (data, cb) => {
-  const url = 'https://serene-eyrie-97376.herokuapp.com/sessions';
+  const url = `https://serene-eyrie-97376.herokuapp.com/sessions`;
   return dispatch => {
     fetch(url, {
       method: 'POST',

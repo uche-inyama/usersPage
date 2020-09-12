@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { sheduleMeeting } from '../../action';
 import DetailWrapper from './detailStyle';
+import * as imageUrl from '../../imageUrl';
 
 export const DetailPage = ({ centers, bookings }) => {
   const { id } = useParams();
@@ -12,14 +13,14 @@ export const DetailPage = ({ centers, bookings }) => {
 
   const center = centers.find(element => element.id === parseInt(id, 10));
   const image = center ? center.image : '';
-  // const hall = center ? center.hall : '';
+  const hall = center ? center.hall : '';
   const building = center ? center.building : '';
   const price = center ? center.price : '';
   const capacity = center ? center.capacity : '';
   const state = center ? center.state : '';
   const city = center ? center.city : '';
 
-  const imageUrl = `"http://localhost:3002${image}"`;
+  const url = `${image}`;
 
   const currentUser = localStorage.getItem('current_user');
 
@@ -48,7 +49,7 @@ export const DetailPage = ({ centers, bookings }) => {
           <div
             className="image"
             style={{
-              backgroundImage: `url(${imageUrl})`,
+              backgroundImage: `url(${url})`,
             }}
           />
         </div>
