@@ -14,6 +14,8 @@ nav{
     .logo{
       align-self: center;
       justify-self: center;
+      text-decoration: none;
+      color: black;
       .center, .event{
         font-size: 1.5em;
         font-weight: 700;
@@ -24,6 +26,10 @@ nav{
       grid-template-columns: 1fr;
       grid-gap: 50px;
       text-align: center;
+      a{
+        text-decoration: none;
+        color: black;
+      }
       font-size: 1.2em;  
       height: 50%;
       .signout{

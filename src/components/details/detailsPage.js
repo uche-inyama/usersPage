@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { sheduleMeeting } from '../../action';
 import DetailWrapper from './detailStyle';
-import * as imageUrl from '../../imageUrl';
 
 export const DetailPage = ({ centers, bookings }) => {
   const { id } = useParams();

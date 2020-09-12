@@ -18,10 +18,10 @@ function NavBar({ currentUser, logOut }) {
     ? (
       <nav>
         <ul>
-          <li className="logo">
+          <Link to="/Home" className="logo">
             <p className="event">Event</p>
             <p className="center">Centers</p>
-          </li>
+          </Link>
           <li className="navigation">
             <Link to={`/appointment/${currentUser}`}>Appointments</Link>
             <div className="signout" onClick={handleClick}>sign out</div>
