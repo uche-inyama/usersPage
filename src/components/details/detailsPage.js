@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
 import { sheduleMeeting } from '../../action';
 import DetailWrapper from './detailStyle';
 
-export const DetailPage = ({ centers, bookings }) => {
-  const { id } = useParams();
+const DetailPage = ({ centers, bookings, match }) => {
+  const { id } = match.params;
   const [email, setEmailAddress] = useState('');
   const [useCity, setCity] = useState('');
 
@@ -59,15 +58,16 @@ export const DetailPage = ({ centers, bookings }) => {
               {building}
             </li>
             <li>
-              Location:
-              {city}
-              {' '}
-              city
-              {' '}
+              Hall:
+              {hall}
             </li>
             <li>
-              State:
+              Location:
+              {city}
+              ,
+              {' '}
               {state}
+              {' '}
             </li>
             <li>
               Capacity:
@@ -95,7 +95,7 @@ export const DetailPage = ({ centers, bookings }) => {
           <input
             type="text"
             name="appointment[hall]"
-            value={center ? center.hall : ''}
+            value={hall}
             readOnly
           />
           {' '}
@@ -125,6 +125,11 @@ export const DetailPage = ({ centers, bookings }) => {
 };
 
 DetailPage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
   centers: PropTypes.arrayOf(
     PropTypes.shape({
       building: PropTypes.string.isRequired,

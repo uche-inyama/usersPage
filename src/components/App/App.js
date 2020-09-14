@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import {
   BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';

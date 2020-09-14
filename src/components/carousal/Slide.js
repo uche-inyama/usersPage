@@ -23,7 +23,7 @@ const Slide = ({ content, id }) => {
 
 Slide.defaultProps = {
   content: null,
-}
+};
 
 Slide.propTypes = {
   content: PropTypes.string,

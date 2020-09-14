@@ -5,7 +5,7 @@ import HomePageWrapper from './HomePageStyle';
 import Slider from '../carousal/Slider';
 
 const HomePage = ({ centers }) => (
-  <HomePageWrapper className="container" >
+  <HomePageWrapper className="container">
     <div className="emptySpace">
       <h1>Latest Halls</h1>
     </div>
@@ -15,7 +15,7 @@ const HomePage = ({ centers }) => (
       </div>
       <span>Click on the image for details</span>
     </main>
-  </HomePageWrapper >
+  </HomePageWrapper>
 );
 
 const mapStateToProps = state => ({

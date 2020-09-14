@@ -27,7 +27,7 @@ grid-gap: 5px;
         display: flex;
         padding-top: 20px;
         li{
-          padding: 10px;
+          padding: 2px;
           border: solid 1px #000;
           border-raduis: 5px;
           margin-right: 5px;

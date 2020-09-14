@@ -55,7 +55,7 @@ export const clearStatus = () => ({
 });
 
 export const receiveCenters = () => {
-  const url = `${imageUrl.localHost}/api/v1/centers`;
+  const url = `${imageUrl.herokuHost}/api/v1/centers`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -69,7 +69,7 @@ export const receiveCenters = () => {
 };
 
 export const receiveUser = data => {
-  const url = `https://serene-eyrie-97376.herokuapp.com/registrations`;
+  const url = `${imageUrl.herokuHost}/registrations`;
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -82,7 +82,7 @@ export const receiveUser = data => {
 };
 
 export const sheduleMeeting = data => {
-  const url = `https://serene-eyrie-97376.herokuapp.com/appointments`;
+  const url = `${imageUrl.herokuHost}/appointments`;
   return dispatch => {
     fetch(url, {
       method: 'POST',
@@ -95,7 +95,7 @@ export const sheduleMeeting = data => {
 };
 
 export const receiveAppointments = username => {
-  const url = `https://serene-eyrie-97376.herokuapp.com/appointments/${username}`;
+  const url = `${imageUrl.herokuHost}/appointments/${username}`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -109,14 +109,14 @@ export const receiveAppointments = username => {
 };
 
 export const authenticateUser = (data, cb) => {
-  const url = `https://serene-eyrie-97376.herokuapp.com/sessions`;
+  const url = `${imageUrl.herokuHost}/sessions`;
   return dispatch => {
     fetch(url, {
       method: 'POST',
       mode: 'cors',
       body: data,
     },
-      { withCredentials: true })
+    { withCredentials: true })
       .then(response => (response.json()))
       .then(({ status, currentUser }) => {
         if (status === 'created') {
