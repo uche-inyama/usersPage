@@ -1,7 +1,11 @@
 # Project Name: Event Centers
 
+## Home page
+![eventDetail](https://user-images.githubusercontent.com/46329537/93036553-1a6a5880-f638-11ea-873f-aa6d613cf3ed.png)
 
-![Screenshot](https://user-images.githubusercontent.com/46329537/84108147-6b562980-aa17-11ea-9d55-365c0b811cbf.png)
+## Dtail page
+![detail](https://user-images.githubusercontent.com/46329537/93036641-5bfb0380-f638-11ea-9a36-1e47deaf2566.png)
+
 
 Additional description about the project and its features.
 
@@ -24,7 +28,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://practical-bose-9026ec.netlify.app/)
+[Live Demo Link](https://heuristic-hawking-5ab9f8.netlify.app/)
 
 ## Getting Started
 
