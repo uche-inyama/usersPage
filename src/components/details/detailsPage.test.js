@@ -4,7 +4,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
-import { Router } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import DetailsPage from './detailsPage';
 
@@ -40,13 +39,12 @@ describe('detailsPage as a connected component', () => {
 
   it('checks if the dispatch function have been called', () => {
     const dispatch = jest.fn();
-    store.dispatch = dispatch();
-
     shallow(
       <Provider store={store}>
         <DetailsPage {...props} />
       </Provider>,
     );
+    store.dispatch = dispatch();
     expect(dispatch).toHaveBeenCalledTimes(1);
   });
 });
