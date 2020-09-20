@@ -11,7 +11,7 @@ import {
 } from '../actions/action';
 import HomePage from '../containers/homePage/homePage';
 import DetailsPage from '../containers/details/detailsPage';
-import Register from '../components/auth/Registration';
+import Register from '../containers/auth/Registration';
 import Login from '../containers/auth/Login';
 import Appointments from '../containers/appointments/appointments';
 import NavBar from '../components/navBar/navBar';
