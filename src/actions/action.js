@@ -115,8 +115,7 @@ export const authenticateUser = (data, cb) => {
       method: 'POST',
       mode: 'cors',
       body: data,
-    },
-      { withCredentials: true })
+    }, { withCredentials: true })
       .then(response => (response.json()))
       .then(({ status, currentUser }) => {
         if (status === 'created') {
