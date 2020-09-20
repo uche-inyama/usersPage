@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './fontawesome';
 import './index.css';
-import App from './components/App/App';
+import App from './App/App';
 import store from './reducer/store';
 import { addUser } from './actions/action';
 

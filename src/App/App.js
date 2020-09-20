@@ -8,16 +8,16 @@ import {
   receiveCenters,
   receiveAppointments,
   removeUser,
-} from '../../actions/action';
-import HomePage from '../homePage/homePage';
-import DetailsPage from '../details/detailsPage';
-import Register from '../auth/Registration';
-import Login from '../auth/Login';
-import Appointments from '../appointments/appointments';
-import NavBar from '../navBar/navBar';
+} from '../actions/action';
+import HomePage from '../containers/homePage/homePage';
+import DetailsPage from '../components/details/detailsPage';
+import Register from '../components/auth/Registration';
+import Login from '../components/auth/Login';
+import Appointments from '../components/appointments/appointments';
+import NavBar from '../components/navBar/navBar';
 import AppWrapper from './AppStyle';
 import AppContainerStyle from './appContainerStyle';
-import '../../reset.css';
+import '../reset.css';
 
 function App({
   loadCenters, loadAppointments, currentUser, logOut,

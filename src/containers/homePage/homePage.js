@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import HomePageWrapper from './HomePageStyle';
-import Slider from '../carousal/Slider';
+import Slider from '../../components/carousal/Slider';
 
 const HomePage = ({ centers }) => (
   <HomePageWrapper className="container">
