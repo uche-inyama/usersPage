@@ -1,4 +1,4 @@
-import * as imageUrl from './imageUrl';
+import * as imageUrl from '../imageUrl';
 
 export const GET_CENTERS = 'GET_CENTERS';
 export const GET_CENTER = 'GET_CENTER';
@@ -116,7 +116,7 @@ export const authenticateUser = (data, cb) => {
       mode: 'cors',
       body: data,
     },
-    { withCredentials: true })
+      { withCredentials: true })
       .then(response => (response.json()))
       .then(({ status, currentUser }) => {
         if (status === 'created') {

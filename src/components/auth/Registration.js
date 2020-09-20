@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { receiveUser } from '../../action';
+import { receiveUser } from '../../actions/action';
 import RegistrationWrapper from './RegistrationStyle';
 import image from '../../asset/image/eventCenter.jpg';
 

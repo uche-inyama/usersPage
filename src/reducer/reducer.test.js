@@ -1,5 +1,5 @@
 import { user, appointmentBookings } from './reducer';
-import * as actions from './action';
+import * as actions from '../actions/action';
 import { initStore } from './store';
 
 describe.skip('users reducer', () => {

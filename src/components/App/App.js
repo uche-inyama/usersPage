@@ -8,7 +8,7 @@ import {
   receiveCenters,
   receiveAppointments,
   removeUser,
-} from '../../action';
+} from '../../actions/action';
 import HomePage from '../homePage/homePage';
 import DetailsPage from '../details/detailsPage';
 import Register from '../auth/Registration';
@@ -23,8 +23,10 @@ function App({
   loadCenters, loadAppointments, currentUser, logOut,
 }) {
   useEffect(() => {
+
     loadCenters();
     loadAppointments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -4,18 +4,15 @@ import {
   REMOVE_USER,
   NOT_LOGGED_IN,
   CLEAR_STATUS,
-  // GET_CENTER,
   POST_USER,
   BOOK_APPOINTMENT,
   GET_APPOINTMENTS,
-} from './action';
+} from '../actions/action';
 
 export const centers = (state = [], action) => {
   switch (action.type) {
     case GET_CENTERS:
       return [...state, ...action.centers];
-    // case GET_CENTER:
-    //   return;
     default:
       return state;
   }

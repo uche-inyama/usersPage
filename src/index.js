@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import './fontawesome';
 import './index.css';
 import App from './components/App/App';
-import store from './store';
-import { addUser } from './action';
+import store from './reducer/store';
+import { addUser } from './actions/action';
 
 const user = localStorage.getItem('current_user');
 if (user) {

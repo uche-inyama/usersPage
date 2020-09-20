@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 
 import * as actions from './action';
-import store from './store';
+import store from '../reducer/store';
 
 describe.skip('actions', () => {
   const centers = [
