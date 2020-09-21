@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const HomePageWrapper = styled.div`
 display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 150px 450px;
-grid-gap: 5px;
-border: 1px solid gray;
+grid-template-columns: 2fr 10fr;
+main{
+  border-left: 1px solid black;
+}
 .emptySpace{
   display: grid;
   grid-template-columns: 1fr;
@@ -13,13 +13,14 @@ border: 1px solid gray;
   font-weight: 700;
   place-items: center center;
   position: relative;
+  height: 150px;
   h1{
     position: absolute;
     left: 250px;
   }
 }
 .centerList{
-  height: 90%;
+  height: 70%;
 }
 `;
 export default HomePageWrapper;

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const LoginWrapper = styled.div`
+display: grid;
+grid-template-columns:  1fr;
+height: 95vh;
+width: 100%;
 .image{
   display: flex;
   flex-direction: column;

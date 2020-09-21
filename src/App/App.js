@@ -28,14 +28,22 @@ function App({
     // eslint-disable-next-line
   }, []);
 
+
+  const user = localStorage.getItem('current_user')
+
+
+  const renderNavBar = user ? (
+    <NavBar
+      currentUser={currentUser}
+      logOut={logOut}
+    />
+  ) : ('')
+
   return (
     <AppContainerStyle>
       <AppWrapper>
         <Router>
-          <NavBar
-            currentUser={currentUser}
-            logOut={logOut}
-          />
+          {/* {renderNavBar} */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={Register} />

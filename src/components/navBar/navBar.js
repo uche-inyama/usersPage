@@ -23,7 +23,8 @@ function NavBar({ currentUser, logOut }) {
             <p className="center">Centers</p>
           </Link>
           <li className="navigation">
-            <Link to={`/appointment/${currentUser}`}>Appointments</Link>
+            <div className="hall-button">Halls</div>
+            <Link to={`/appointment/${currentUser}`}>Bookings</Link>
             <div className="signout" onClick={handleClick}>sign out</div>
           </li>
           <li className="social-media-icons">
@@ -41,10 +42,7 @@ function NavBar({ currentUser, logOut }) {
       <>
         <nav>
           <ul>
-            <li className="logo">
-              <p className="event">Event</p>
-              <p className="center">Centers</p>
-            </li>
+
           </ul>
         </nav>
       </>

@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { sheduleMeeting } from '../../actions/action';
 import DetailWrapper from './detailStyle';
+import { removeUser } from '../../actions/action';
+import NavBar from '../../components/navBar/navBar';
 
-const DetailPage = ({ centers, bookings, match }) => {
+
+const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
   const { id } = match.params;
   const [email, setEmailAddress] = useState('');
   const [useCity, setCity] = useState('');
@@ -20,7 +23,7 @@ const DetailPage = ({ centers, bookings, match }) => {
 
   const url = `${image}`;
 
-  const currentUser = localStorage.getItem('current_user');
+  const user = localStorage.getItem('current_user');
 
   const emailChangeHandler = e => {
     e.preventDefault();
@@ -40,85 +43,96 @@ const DetailPage = ({ centers, bookings, match }) => {
     setCity('');
   };
 
+  // const user = localStorage.getItem('current_user')
+  const renderNavBar = user ? (
+    <NavBar
+      currentUser={currentUser}
+      logOut={logOut}
+    />
+  ) : ('')
+
   return (
     <DetailWrapper>
-      <div className="top-wrapper">
-        <div className="image-wrapper">
-          <div
-            className="image"
-            style={{
-              backgroundImage: `url(${url})`,
-            }}
-          />
-        </div>
-        <div className="details">
-          <ul>
-            <li>
-              Building:
+      {renderNavBar}
+      <div className="DetailsWrapper">
+        <div className="top-wrapper">
+          <div className="image-wrapper">
+            <div
+              className="image"
+              style={{
+                backgroundImage: `url(${url})`,
+              }}
+            />
+          </div>
+          <div className="details">
+            <ul>
+              <li className="item-detail">
+                Building:
               {building}
-            </li>
-            <li>
-              Hall:
+              </li>
+              <li className="item-detail">
+                Hall:
               {hall}
-            </li>
-            <li>
-              Location:
+              </li>
+              <li className="item-detail">
+                Location:
               {city}
               ,
               {' '}
-              {state}
-              {' '}
-            </li>
-            <li>
-              Capacity:
+                {state}
+                {' '}
+              </li>
+              <li className="item-detail">
+                Capacity:
               {capacity}
-            </li>
-            <li>
-              Price:
+              </li>
+              <li className="item-detail">
+                Price:
               {price}
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div className="book-appointment">
-        <h2>Book an Appointment with us.</h2>
-        <form onSubmit={submitHandler}>
-          <input
-            type="text"
-            name="appointment[username]"
-            value={currentUser}
-            readOnly
-          />
-          <br />
+        <div className="book-appointment">
+          <h2>Book an Appointment with us.</h2>
+          <form onSubmit={submitHandler}>
+            <input
+              type="text"
+              name="appointment[username]"
+              value={user}
+              readOnly
+            />
+            <br />
 
-          <input
-            type="text"
-            name="appointment[hall]"
-            value={hall}
-            readOnly
-          />
-          {' '}
-          <br />
+            <input
+              type="text"
+              name="appointment[hall]"
+              value={hall}
+              readOnly
+            />
+            {' '}
+            <br />
 
-          <input
-            type="text"
-            name="appointment[email]"
-            onChange={emailChangeHandler}
-            placeholder="email"
-            value={email}
-          />
-          <br />
-          <input
-            type="text"
-            name="appointment[city]"
-            onChange={cityChangeHandler}
-            placeholder="city"
-            value={useCity}
-          />
-          <br />
-          <input type="submit" value="submit" />
-        </form>
+            <input
+              type="text"
+              name="appointment[email]"
+              onChange={emailChangeHandler}
+              placeholder="email"
+              value={email}
+            />
+            <br />
+            <input
+              type="text"
+              name="appointment[city]"
+              onChange={cityChangeHandler}
+              placeholder="city"
+              value={useCity}
+            />
+            <br />
+            <input type="submit" value="submit" />
+          </form>
+        </div>
       </div>
     </DetailWrapper>
   );
@@ -145,12 +159,17 @@ DetailPage.propTypes = {
 
 const mapStateToProps = state => ({
   centers: state.centers,
+  currentUser: state.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
   bookings: (data => {
     dispatch(sheduleMeeting(data));
   }),
+  logOut: (() => {
+    dispatch(removeUser());
+  })
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);

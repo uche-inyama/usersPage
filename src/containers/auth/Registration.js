@@ -27,7 +27,6 @@ export class Registration extends Component {
   }
 
   handleChange(e, name) {
-    // e.preventDefault();
     this.setState({
       [name]: e.target.value,
     });
