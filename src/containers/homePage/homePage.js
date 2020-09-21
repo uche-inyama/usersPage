@@ -20,15 +20,15 @@ const HomePage = ({ centers, currentUser, logOut }) => {
   return (
     <HomePageWrapper className="container">
       {renderNavBar}
-      <main>
-        <div className="emptySpace">
+      <section>
+        <header className="emptySpace">
           <h1>Latest Halls</h1>
-        </div>
-        <div className="centerList">
+        </header>
+        <main className="centerList">
           <Slider centers={centers} />
-        </div>
+        </main>
         <span>Click on the image for details</span>
-      </main>
+      </section>
     </HomePageWrapper>
   )
 };

@@ -6,7 +6,6 @@ import AppointmentWrapper from './appointmentStyle';
 
 const Appointments = ({ appointments }) => {
   const { id } = useParams();
-  // const username = localStorage.getItem('current_user');
 
   const appointmentPerUser = appointments.filter(ele => id === ele.username);
 

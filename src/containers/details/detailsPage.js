@@ -43,7 +43,6 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
     setCity('');
   };
 
-  // const user = localStorage.getItem('current_user')
   const renderNavBar = user ? (
     <NavBar
       currentUser={currentUser}
@@ -54,8 +53,8 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
   return (
     <DetailWrapper>
       {renderNavBar}
-      <div className="DetailsWrapper">
-        <div className="top-wrapper">
+      <main className="DetailsWrapper">
+        <section className="top-wrapper">
           <div className="image-wrapper">
             <div
               className="image"
@@ -64,7 +63,7 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
               }}
             />
           </div>
-          <div className="details">
+          <aside className="details">
             <ul>
               <li className="item-detail">
                 Building:
@@ -91,10 +90,10 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
               {price}
               </li>
             </ul>
-          </div>
-        </div>
+          </aside>
+        </section>
 
-        <div className="book-appointment">
+        <section className="book-appointment">
           <h2>Book an Appointment with us.</h2>
           <form onSubmit={submitHandler}>
             <input
@@ -132,8 +131,8 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
             <br />
             <input type="submit" value="submit" />
           </form>
-        </div>
-      </div>
+        </section>
+      </main>
     </DetailWrapper>
   );
 };

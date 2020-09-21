@@ -27,6 +27,11 @@ export const Login = ({
     );
   };
 
+  const handleMenuBar = (e) => {
+    e.preventDefault()
+    console.log(e.target)
+  }
+
   return (
     <>
       <LoginWrapper>
@@ -36,6 +41,11 @@ export const Login = ({
             backgroundImage: `url(${image})`,
           }}
         >
+          <ul className="menu-bar">
+            <li className="bar" onClick={handleMenuBar}></li>
+            <li className="bar" onClick={handleMenuBar}></li>
+            <li className="bar" onClick={handleMenuBar}></li>
+          </ul>
           <div className="status">{status}</div>
           <div className="formWrapper">
             <form onSubmit={handleSubmit}>

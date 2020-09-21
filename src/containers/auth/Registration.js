@@ -32,6 +32,11 @@ export class Registration extends Component {
     });
   }
 
+  handleMenuBar = (e) => {
+    e.preventDefault()
+    console.log(e.target.className)
+  }
+
   render() {
     const { username } = this.state;
     return (
@@ -42,6 +47,11 @@ export class Registration extends Component {
             backgroundImage: `url(${image})`,
           }}
         >
+          <ul className="menu-bar" onClick={this.handleMenuBar}>
+            <li className="bar"></li>
+            <li className="bar"></li>
+            <li className="bar"></li>
+          </ul>
           <div className="registerationWrapper">
             <form onSubmit={this.handleSubmit}>
               <input

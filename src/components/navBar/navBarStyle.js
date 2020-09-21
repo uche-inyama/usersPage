@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const NavBarWrapper = styled.div`
+const NavBarWrapper = styled.nav`
 nav{
   height: 100%;
   ul{

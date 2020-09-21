@@ -14,7 +14,8 @@ width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size cover;
-  background-position: 50% 100%
+  background-position: 50% 100%;
+  position: relative;
 }
 .status{
   padding: 10px;
@@ -43,5 +44,20 @@ form {
   text-decoration: none;
   font-weight: 700;
 }
+
+.menu-bar{
+  position: relative;
+  bottom: 240px;
+  right: 360px;
+  color: #fff;
+  li{
+    background: #fff;
+    height: 5px;
+    width: 30px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+}
+
 `;
 export default LoginWrapper;

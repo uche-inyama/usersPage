@@ -32,6 +32,20 @@ width: 100%;
       font-size: 1em;
     }
   }
+  .menu-bar{
+    position: relative;
+    bottom: 260px;
+    right: 360px;
+    color: #fff;
+    cursor: pointer;
+    li{
+      background: #fff;
+      height: 5px;
+      width: 30px;
+      margin-bottom: 5px;
+    }
+  }
+
   .loginLink{
     font-size: 1.5em;
     color: black;

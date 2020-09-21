@@ -13,7 +13,7 @@ const Arrow = ({ direction, handleClick }) => (
       height: 50px;
       width: 50px;
       justify-content: center;
-      background: white;
+      background: #48f542;
       border-radius: 50%;
       cursor: pointer;
       align-items: center;
