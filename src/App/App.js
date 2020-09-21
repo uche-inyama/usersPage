@@ -7,43 +7,28 @@ import { connect } from 'react-redux';
 import {
   receiveCenters,
   receiveAppointments,
-  removeUser,
 } from '../actions/action';
+
 import HomePage from '../containers/homePage/homePage';
 import DetailsPage from '../containers/details/detailsPage';
 import Register from '../containers/auth/Registration';
 import Login from '../containers/auth/Login';
 import Appointments from '../containers/appointments/appointments';
-import NavBar from '../components/navBar/navBar';
 import AppWrapper from './AppStyle';
 import AppContainerStyle from './appContainerStyle';
 import '../reset.css';
 
-function App({
-  loadCenters, loadAppointments, currentUser, logOut,
-}) {
+function App({ loadCenters, loadAppointments }) {
   useEffect(() => {
     loadCenters();
     loadAppointments();
     // eslint-disable-next-line
   }, []);
 
-
-  const user = localStorage.getItem('current_user')
-
-
-  const renderNavBar = user ? (
-    <NavBar
-      currentUser={currentUser}
-      logOut={logOut}
-    />
-  ) : ('')
-
   return (
     <AppContainerStyle>
       <AppWrapper>
         <Router>
-          {/* {renderNavBar} */}
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={Register} />
@@ -57,15 +42,9 @@ function App({
   );
 }
 
-App.defaultProps = {
-  currentUser: null,
-};
-
 App.propTypes = {
   loadCenters: PropTypes.func.isRequired,
   loadAppointments: PropTypes.func.isRequired,
-  currentUser: PropTypes.string,
-  logOut: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => {
@@ -77,14 +56,7 @@ const mapDispatchToProps = dispatch => {
     loadAppointments: (() => {
       dispatch(receiveAppointments(username));
     }),
-    logOut: (() => {
-      dispatch(removeUser());
-    }),
   };
 };
 
-const mapStateToProps = state => ({
-  currentUser: state.currentUser,
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

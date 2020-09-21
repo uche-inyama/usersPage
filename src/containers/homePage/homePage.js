@@ -6,16 +6,14 @@ import Slider from '../../components/carousal/Slider';
 import { removeUser } from '../../actions/action';
 import NavBar from '../../components/navBar/navBar';
 
-
-
 const HomePage = ({ centers, currentUser, logOut }) => {
-  const user = localStorage.getItem('current_user')
+  const user = localStorage.getItem('current_user');
   const renderNavBar = user ? (
     <NavBar
       currentUser={currentUser}
       logOut={logOut}
     />
-  ) : ('')
+  ) : ('');
 
   return (
     <HomePageWrapper className="container">
@@ -30,7 +28,7 @@ const HomePage = ({ centers, currentUser, logOut }) => {
         <span>Click on the image for details</span>
       </section>
     </HomePageWrapper>
-  )
+  );
 };
 
 const mapStateToProps = state => ({
@@ -39,16 +37,15 @@ const mapStateToProps = state => ({
 
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    logOut: (() => {
-      dispatch(removeUser());
-    }),
-  }
-}
-
+const mapDispatchToProps = dispatch => ({
+  logOut: (() => {
+    dispatch(removeUser());
+  }),
+});
 
 HomePage.propTypes = {
+  currentUser: PropTypes.string.isRequired,
+  logOut: PropTypes.func.isRequired,
   centers: PropTypes.arrayOf(
     PropTypes.shape({
       building: PropTypes.string.isRequired,

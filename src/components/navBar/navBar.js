@@ -38,15 +38,7 @@ function NavBar({ currentUser, logOut }) {
         </ul>
       </nav>
     )
-    : (
-      <>
-        <nav>
-          <ul>
-
-          </ul>
-        </nav>
-      </>
-    );
+    : ('');
   return (
     <NavBarWrapper>{navBar}</NavBarWrapper>
   );

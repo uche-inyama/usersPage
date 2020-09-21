@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { sheduleMeeting } from '../../actions/action';
+import { sheduleMeeting, removeUser } from '../../actions/action';
 import DetailWrapper from './detailStyle';
-import { removeUser } from '../../actions/action';
 import NavBar from '../../components/navBar/navBar';
 
-
-const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
+const DetailPage = ({
+  centers, bookings, match, logOut, currentUser,
+}) => {
   const { id } = match.params;
   const [email, setEmailAddress] = useState('');
   const [useCity, setCity] = useState('');
@@ -48,7 +48,7 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
       currentUser={currentUser}
       logOut={logOut}
     />
-  ) : ('')
+  ) : ('');
 
   return (
     <DetailWrapper>
@@ -67,27 +67,27 @@ const DetailPage = ({ centers, bookings, match, logOut, currentUser }) => {
             <ul>
               <li className="item-detail">
                 Building:
-              {building}
+                {building}
               </li>
               <li className="item-detail">
                 Hall:
-              {hall}
+                {hall}
               </li>
               <li className="item-detail">
                 Location:
-              {city}
-              ,
-              {' '}
+                {city}
+                ,
+                {' '}
                 {state}
                 {' '}
               </li>
               <li className="item-detail">
                 Capacity:
-              {capacity}
+                {capacity}
               </li>
               <li className="item-detail">
                 Price:
-              {price}
+                {price}
               </li>
             </ul>
           </aside>
@@ -154,6 +154,8 @@ DetailPage.propTypes = {
     }),
   ).isRequired,
   bookings: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired,
+  currentUser: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -167,8 +169,7 @@ const mapDispatchToProps = dispatch => ({
   }),
   logOut: (() => {
     dispatch(removeUser());
-  })
+  }),
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);
