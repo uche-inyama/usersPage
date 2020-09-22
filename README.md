@@ -28,7 +28,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://heuristic-hawking-5ab9f8.netlify.app/)
+[Live Demo Link](https://admiring-joliot-099c30.netlify.app)
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ To get the local copy up and running follow these simple example steps.
 
 ### Deployment:
 
-https://practical-bose-9026ec.netlify.app/
+https://admiring-joliot-099c30.netlify.app
 
 ## Author
 
