@@ -1,11 +1,10 @@
 # Project Name: Event Centers
 
 ## Home page
-![eventDetail](https://user-images.githubusercontent.com/46329537/93036553-1a6a5880-f638-11ea-873f-aa6d613cf3ed.png)
+![homes](https://user-images.githubusercontent.com/46329537/93839719-c5f15980-fc85-11ea-953e-72fa9e55d814.png)
 
 ## Detail page
-![detail](https://user-images.githubusercontent.com/46329537/93036641-5bfb0380-f638-11ea-9a36-1e47deaf2566.png)
-
+![details](https://user-images.githubusercontent.com/46329537/93839710-bf62e200-fc85-11ea-847f-2da5731747d3.png)
 
 Additional description about the project and its features.
 
