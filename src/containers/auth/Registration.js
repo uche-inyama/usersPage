@@ -15,7 +15,6 @@ export class Registration extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleMenuBar = this.handleMenuBar.bind(this);
   }
 
   handleSubmit(e) {
@@ -73,17 +72,17 @@ const mapStateToProps = state => ({
   users: state.users,
 });
 
+const mapDispatchToProps = dispatch => ({
+  loadUsers: (data => {
+    dispatch(receiveUser(data));
+  }),
+});
+
 Registration.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
   loadUsers: PropTypes.func.isRequired,
 };
-
-const mapDispatchToProps = dispatch => ({
-  loadUsers: (data => {
-    dispatch(receiveUser(data));
-  }),
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registration);
