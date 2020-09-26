@@ -27,7 +27,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://admiring-joliot-099c30.netlify.app)
+[Live Demo Link](https://focused-hermann-839d03.netlify.app)
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ To get the local copy up and running follow these simple example steps.
 
 ### Deployment:
 
-https://admiring-joliot-099c30.netlify.app
+https://focused-hermann-839d03.netlify.app
 
 ## Author
 
