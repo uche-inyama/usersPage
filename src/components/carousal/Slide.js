@@ -9,8 +9,9 @@ const Slide = ({ content, id }) => {
     <Link
       to={detailsPath}
       css={css`
-      height: 100%;
-      width: 100%;
+      height: 30%;
+      width: 200px;
+      margin-left: 10px;
       background-image: url('${content}');
       background-size: cover;
       background-repeat: no-repeat;

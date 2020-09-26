@@ -10,7 +10,8 @@ import Arrow from './Arrow';
  * @function Slider
  */
 const Slider = ({ centers }) => {
-  const getWidth = () => window.innerWidth;
+  const getWidth = () => 636.5;
+
 
   const [state, setState] = useState({
     activeIndex: 0,
@@ -21,39 +22,35 @@ const Slider = ({ centers }) => {
   const { translate, transition, activeIndex } = state;
 
   const nextSlide = () => {
-    if (activeIndex === centers.length - 1) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeIndex: 0,
-      });
-    }
+    if (activeIndex === centers.length - 3) return;
     return setState({
       ...state,
-      activeIndex: activeIndex + 1,
-      translate: (activeIndex + 1) * getWidth(),
+      activeIndex: state.activeIndex + 1,
+      translate: (state.activeIndex + 1) * 212,
     });
   };
 
   const prevSlide = () => {
-    if (activeIndex === 0) {
-      return setState({
-        ...state,
-        translate: (centers.length - 1) * getWidth(),
-        activeIndex: centers.length - 1,
-      });
-    }
+    if (activeIndex === 0) return
     return setState({
       ...state,
       activeIndex: activeIndex - 1,
-      translate: (activeIndex - 1) * getWidth(),
+      translate: (activeIndex - 1) * 212,
     });
   };
+
+  const getlength = () => {
+    let count = 1;
+    let value = centers.length / 3;
+    count *= (Math.floor(value))
+    return count + 1;
+  }
+  console.log(getlength());
 
   const SliderCSS = css`
   position: relative;
   height: 65vh;
-  width: 80vw;
+  width: 49vw;
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -63,7 +60,7 @@ const Slider = ({ centers }) => {
       <SliderContent
         translate={translate}
         transition={transition}
-        width={getWidth() * centers.length}
+        width={getWidth() * getlength()}
       >
         {centers.map(center => (
           <Slide
