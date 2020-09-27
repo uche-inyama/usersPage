@@ -43,6 +43,9 @@ grid-template-columns: 2fr 10fr;
       font-family: 'Work Sans', sans-serif;
       padding: 15px 0 0 100px;
       cursor: pointer;
+      :hover{
+        color: #8bc238;
+      }
     }
   }
   form {

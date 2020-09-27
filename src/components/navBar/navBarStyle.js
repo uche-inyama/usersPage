@@ -11,13 +11,20 @@ nav{
     grid-gap: 2px;
     justify-content: start;
     height: 100%;
+    position: relative;
     .logo{
       align-self: center;
       justify-self: center;
       text-decoration: none;
-      height: 100%;
+      height: 30%;
+      width: 80px;
       color: black;
       padding-top: 20px;
+      position: relative;
+      bottom: 40px;
+      :hover {
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      }
       .center, .event{
         font-family: 'Italianno', cursive;
         font-size: 2.3em;
@@ -38,6 +45,9 @@ nav{
         text-decoration: none;
         color: black;
         font-size: 0.8em;
+        :hover{
+          color: #8bc238;
+        }
       }
       font-size: 1.2em;  
       height: 50%;
@@ -49,6 +59,9 @@ nav{
         cursor: pointer;
         font-size: 0.8em;
         margin-top: 20px;
+        :hover{
+          color: #8bc238;
+        }
       } 
     }
     .hall-button{
