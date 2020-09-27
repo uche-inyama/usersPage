@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 const DetailWrapper = styled.div`
 display: grid;
+position: relative;
 grid-template-columns: 2fr 10fr;
   .top-wrapper{
     display: grid;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 8fr 4fr;
     padding-top: 5px;
     .image-wrapper{
-      height: 380px;
+      width: 450px;
     }
     .image{
       background-repeat: no-repeat;
@@ -19,10 +20,13 @@ grid-template-columns: 2fr 10fr;
   }
   .DetailsWrapper{
     display: grid;
-    grid-template-rows: 380px 274px;
+    grid-template-rows: 480px 274px;
   }
   .item-detail{
-    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 5px 15px 5px;
     font-family: 'Work Sans', sans-serif;
     margin: 0 5px;
   }
@@ -37,10 +41,15 @@ grid-template-columns: 2fr 10fr;
     h2{
       font-family: 'Work Sans', sans-serif;
       padding: 15px 0 0 100px;
+      cursor: pointer;
     }
   }
   form {
+    display: none;
     padding-left: 100px;
+    position: absolute;
+    left: 110px;
+    top: 100px;
     input{
       font-family: 'Work Sans', sans-serif;
       width: 300px;

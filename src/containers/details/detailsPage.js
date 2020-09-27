@@ -43,6 +43,11 @@ const DetailPage = ({
     setCity('');
   };
 
+  const form = document.querySelector('form')
+  const handleBookAppointments = () => {
+    form.style.display = 'block';
+  }
+
   const renderNavBar = user ? (
     <NavBar
       currentUser={currentUser}
@@ -66,36 +71,30 @@ const DetailPage = ({
           <aside className="details">
             <ul>
               <li className="item-detail">
-                Building:
-                {building}
+                <span>Building </span> <span>{building}</span>
               </li>
               <li className="item-detail">
-                Hall:
-                {hall}
+                <span>Hall </span> <span>{hall}</span>
               </li>
               <li className="item-detail">
-                Location:
-                {city}
-                ,
-                {' '}
-                {state}
-                {' '}
+                <span> City </span> <span>{city}</span>
               </li>
               <li className="item-detail">
-                Capacity:
-                {capacity}
+                <span>State </span> <span>{state}</span>
               </li>
               <li className="item-detail">
-                Price:
-                {price}
+                <span>Capacity </span> <span>{capacity}</span>
+              </li>
+              <li className="item-detail">
+                <span>Price </span> <span>{price}</span>
               </li>
             </ul>
           </aside>
         </section>
 
         <section className="book-appointment">
-          <h2>Book an Appointment with us.</h2>
-          {/* <form onSubmit={submitHandler}>
+          <h2 onClick={handleBookAppointments}>Book an Appointment with us.</h2>
+          <form onSubmit={submitHandler}>
             <input
               type="text"
               name="appointment[username]"
@@ -130,7 +129,7 @@ const DetailPage = ({
             />
             <br />
             <input type="submit" value="submit" />
-          </form> */}
+          </form>
         </section>
       </main>
     </DetailWrapper>
