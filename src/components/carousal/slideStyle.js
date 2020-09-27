@@ -3,12 +3,7 @@ import styled from 'styled-components';
 export const StyledItemContainer = styled.div`
   width: 150px;
   height: 30%;
-  :nth-child(2n){
-    margin: 0 10px
-  }
-  :nth-child(odd){
-    margin: 0 40px;
-  }
+  margin: 0 31px;
   .hall-name {
     text-align: center;
     padding: 20px 0 40px 0;

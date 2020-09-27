@@ -10,7 +10,7 @@ const Arrow = ({ direction, handleClick }) => (
       display: flex;
       position: absolute;
       top: 10.4%;
-      ${direction === 'right' ? 'right: 8px' : 'left: 5px'};
+      ${direction === 'right' ? 'right: 0px' : 'left: 0px'};
       height: 29px;
       width: 29px;
       justify-content: center;
