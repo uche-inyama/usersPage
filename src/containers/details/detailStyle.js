@@ -20,12 +20,13 @@ grid-template-columns: 2fr 10fr;
   }
   .DetailsWrapper{
     display: grid;
-    grid-template-rows: 480px 274px;
+    grid-template-rows: 480px 100px;
   }
   .item-detail{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 0.8em;
     padding: 15px 5px 15px 5px;
     font-family: 'Work Sans', sans-serif;
     margin: 0 5px;

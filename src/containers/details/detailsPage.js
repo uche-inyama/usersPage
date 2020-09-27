@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { sheduleMeeting, removeUser } from '../../actions/action';
 import DetailWrapper from './detailStyle';
 import NavBar from '../../components/navBar/navBar';
@@ -11,7 +13,9 @@ const DetailPage = ({
   const { id } = match.params;
   const [email, setEmailAddress] = useState('');
   const [useCity, setCity] = useState('');
+  const [selectedDate, setSelectedDate] = useState(null);
 
+  const date = '2019-06-26';
   const center = centers.find(element => element.id === parseInt(id, 10));
   const image = center ? center.image : '';
   const hall = center ? center.hall : '';
@@ -126,6 +130,12 @@ const DetailPage = ({
               onChange={cityChangeHandler}
               placeholder="city"
               value={useCity}
+            />
+            <br />
+            <DatePicker
+              selected={selectedDate}
+              onChange={date => setSelectedDate(date)}
+              placeholderText="date"
             />
             <br />
             <input type="submit" value="submit" />
