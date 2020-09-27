@@ -53,6 +53,15 @@ const Slider = ({ centers }) => {
   width: 49vw;
   margin: 0 auto;
   overflow: hidden;
+  span{
+    display:block;
+    position: relative;
+    bottom: 165px;
+    padding: 0.5px 0;
+    width: 38px;
+    height: 27px;
+    background-color: #8bc238;  
+  }
 `;
 
   return (

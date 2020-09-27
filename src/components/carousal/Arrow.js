@@ -6,15 +6,16 @@ const Arrow = ({ direction, handleClick }) => (
   <div
     onClick={handleClick}
     css={css`
+      color: #fff;
       display: flex;
       position: absolute;
-      top: 10%;
-      ${direction === 'right' ? 'right: 25px' : 'left: 25px'};
-      height: 50px;
-      width: 50px;
+      top: 10.4%;
+      ${direction === 'right' ? 'right: 8px' : 'left: 5px'};
+      height: 29px;
+      width: 29px;
       justify-content: center;
-      background: #48f542;
-      border-radius: 50%;
+      background-color: #8bc238;
+       border-radius: 50%;
       cursor: pointer;
       align-items: center;
       transition: transform ease-in 0.1s;

@@ -20,7 +20,7 @@ const HomePage = ({ centers, currentUser, logOut }) => {
       {renderNavBar}
       <section>
         <header className="emptySpace">
-          <h1>Latest Halls</h1>
+          <h1>latest halls</h1>
           <h6>Please select an Event Center</h6>
         </header>
         <main className="centerList">

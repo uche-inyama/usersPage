@@ -3,9 +3,7 @@ import styled from 'styled-components';
 const HomePageWrapper = styled.div`
 display: grid;
 grid-template-columns: 2fr 10fr;
-section{
-  border-left: 1px solid black;
-}
+font-family: 'Nunito Sans', sans-serif;
 .emptySpace{
   display: grid;
   grid-template-columns: 1fr;
@@ -16,17 +14,22 @@ section{
   height: 200px;
   margin-bottom: 20px;
   h1{
+    font-family: 'Baloo Tammudu 2', cursive;
     position: absolute;
-    left: 250px;
-    font-family: 'Work Sans', sans-serif;
+    left: 205px;
     text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.2em;
   }
   h6 {
+    color: #cdd1ce;
+    font-weight: 400;
+    font-size: 0.7em;
     position:relative;
     top: 30px;
     font-size: 0.6em;
     font-weight: 500;
-    left: 12px;
+    right: 25px;
   }
 }
 .centerList{

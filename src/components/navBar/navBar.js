@@ -13,6 +13,14 @@ function NavBar({ currentUser, logOut }) {
     logOut();
     history.push('/');
   }
+  const navigation = document.querySelector('.navigation');
+  console.log(navigation)
+
+  const handleColorChange = (e) => {
+    e.preventDefault();
+    const bookings = navigation.querySelector('a');
+    bookings.style.backgroundColor = '#8bc238';
+  }
 
   const navBar = currentUser
     ? (

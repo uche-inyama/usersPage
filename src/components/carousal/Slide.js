@@ -21,11 +21,13 @@ const Slide = ({ content, id, center }) => {
       background-repeat: no-repeat;
       background-position: 50% 50%;
       cursor: pointer;
+      position: relative;
     `}
       />
       <div className="hall-name">{center.hall}</div>
       <div className="info">Lorem ipsum dolor sit amet, consectetur
       </div>
+
       <StyledSocialMediaIcons className="navEnd">
         <div><FontAwesomeIcon icon={['fab', 'facebook']} /></div>
         <div><FontAwesomeIcon icon={['fab', 'twitter']} /></div>

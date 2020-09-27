@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const NavBarWrapper = styled.nav`
 nav{
   height: 100%;
+  border-right: 1px solid #ededed;
   ul{
     display: grid;
     grid-template-columns: 1fr;
@@ -16,6 +17,7 @@ nav{
       text-decoration: none;
       height: 100%;
       color: black;
+      padding-top: 20px;
       .center, .event{
         font-family: 'Italianno', cursive;
         font-size: 2.3em;
@@ -24,7 +26,8 @@ nav{
       }
     }
     .navigation{
-      display: grid;
+      display: flex;
+      flex-direction: column;
       font-family: 'Work Sans', sans-serif;
       font-weight: 700;
       grid-template-columns: 1fr;
@@ -39,22 +42,23 @@ nav{
       font-size: 1.2em;  
       height: 50%;
       .signout{
-        border: solid 1px black;
         width: 100px;
         height: 25px;
         margin-left: 10px;
-        padding-top: 6px;
+        padding-top: 3px;
         cursor: pointer;
         font-size: 0.8em;
+        margin-top: 20px;
       } 
     }
     .hall-button{
-      background-color: #48f542;
+      background-color: #8bc238;
       color: #fff;
-      padding: 5px;
+      padding: 8px 0 8px 15px;
       font-weight: 700;
-      margin-left: 10px;
+      margin: 0 0 20px 10px;
       font-size: 0.8em;
+      text-align: left;
     }
     .social-media-icons{
       .navEnd{
