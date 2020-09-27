@@ -8,8 +8,8 @@ const Arrow = ({ direction, handleClick }) => (
     css={css`
       display: flex;
       position: absolute;
-      top: 50%;
-      ${direction === 'right' ? 'right: 430px' : 'left: 25px'};
+      top: 10%;
+      ${direction === 'right' ? 'right: 25px' : 'left: 25px'};
       height: 50px;
       width: 50px;
       justify-content: center;

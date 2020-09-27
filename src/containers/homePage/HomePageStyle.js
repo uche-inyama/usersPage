@@ -13,12 +13,20 @@ section{
   font-weight: 700;
   place-items: center center;
   position: relative;
-  height: 150px;
+  height: 200px;
+  margin-bottom: 20px;
   h1{
     position: absolute;
     left: 250px;
     font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
+  }
+  h6 {
+    position:relative;
+    top: 30px;
+    font-size: 0.6em;
+    font-weight: 500;
+    left: 12px;
   }
 }
 .centerList{

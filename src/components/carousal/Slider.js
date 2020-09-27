@@ -67,6 +67,7 @@ const Slider = ({ centers }) => {
             key={center.id}
             id={center.id}
             content={center.image}
+            center={center}
           />
         ))}
 

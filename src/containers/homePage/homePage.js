@@ -21,11 +21,11 @@ const HomePage = ({ centers, currentUser, logOut }) => {
       <section>
         <header className="emptySpace">
           <h1>Latest Halls</h1>
+          <h6>Please select an Event Center</h6>
         </header>
         <main className="centerList">
           <Slider centers={centers} />
         </main>
-        <span>Click on the image for details</span>
       </section>
     </HomePageWrapper>
   );

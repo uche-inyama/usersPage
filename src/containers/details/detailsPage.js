@@ -95,7 +95,7 @@ const DetailPage = ({
 
         <section className="book-appointment">
           <h2>Book an Appointment with us.</h2>
-          <form onSubmit={submitHandler}>
+          {/* <form onSubmit={submitHandler}>
             <input
               type="text"
               name="appointment[username]"
@@ -130,7 +130,7 @@ const DetailPage = ({
             />
             <br />
             <input type="submit" value="submit" />
-          </form>
+          </form> */}
         </section>
       </main>
     </DetailWrapper>
