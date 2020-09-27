@@ -16,10 +16,11 @@ nav{
       align-self: center;
       justify-self: center;
       text-decoration: none;
-      height: 30%;
-      width: 80px;
+      text-align: center;
+      padding-top: 15px;
+      height: 40%;
+      width: 125px;
       color: black;
-      padding-top: 20px;
       position: relative;
       bottom: 40px;
       :hover {

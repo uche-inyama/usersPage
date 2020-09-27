@@ -1,15 +1,9 @@
 import styled from 'styled-components';
 
-const AppointmentWrapper = styled.ul`
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 100px;
-justify-items: center;
-align-items: center;
+export const AppointmentWrapper = styled.ul`
 font-family: 'Varela Round', sans-serif;
 font-weight: 500;
 font-size: 1.2em;
-border: solid 1px black;
 li.appointment-detail{
   display: flex;
   flex-direction: row;
@@ -21,9 +15,14 @@ li.appointment-detail{
   }
 }
 h1{
-  padding: 30px;
+  text-align: center;
+  padding: 30px 0;
   font-weight: 700;
   font-size: 1.4em;
 }
 `;
-export default AppointmentWrapper;
+
+export const AppointmantsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+`

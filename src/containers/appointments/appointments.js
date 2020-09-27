@@ -2,30 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import AppointmentWrapper from './appointmentStyle';
+import { removeUser } from '../../actions/action';
+import { AppointmentWrapper, AppointmantsContainer } from './appointmentStyle';
+import NavBar from '../../components/navBar/navBar'
 
-const Appointments = ({ appointments }) => {
+
+const Appointments = ({ appointments, logOut, currentUser }) => {
   const { id } = useParams();
 
   const appointmentPerUser = appointments.filter(ele => id === ele.username);
+  const user = localStorage.getItem('current_user');
+
+  const renderNavBar = user ? (
+    <NavBar
+      currentUser={currentUser}
+      logOut={logOut}
+    />
+  ) : ('');
 
   return (
-    <AppointmentWrapper>
-      <h1>Appointment History</h1>
-      {appointmentPerUser.map(appointment => (
-        <li key={appointment.id} className="appointment-detail">
-          <div className="venue">
-            Venue:
+    <AppointmantsContainer>
+      {renderNavBar}
+      <AppointmentWrapper>
+        <h1>Appointment History</h1>
+        {appointmentPerUser.map(appointment => (
+          <li key={appointment.id} className="appointment-detail">
+            <div className="venue">
+              Venue:
             {' '}
-            {appointment.hall}
-            {' '}
+              {appointment.hall}
+              {' '}
             event center, in
             {' '}
-            {appointment.city}
-          </div>
-        </li>
-      ))}
-    </AppointmentWrapper>
+              {appointment.city}
+            </div>
+          </li>
+        ))}
+      </AppointmentWrapper>
+    </AppointmantsContainer>
   );
 };
 
@@ -42,6 +56,12 @@ Appointments.propTypes = {
 
 const mapStateToProps = state => ({
   appointments: state.appointmentBookings,
+  currentUser: state.currentUser,
+});
+const mapDispatchToProps = dispatch => ({
+  logOut: (() => {
+    dispatch(removeUser());
+  }),
 });
 
-export default connect(mapStateToProps, null)(Appointments);
+export default connect(mapStateToProps, mapDispatchToProps)(Appointments);
