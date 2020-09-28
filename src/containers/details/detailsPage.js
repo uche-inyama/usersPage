@@ -47,8 +47,8 @@ const DetailPage = ({
     setCity('');
   };
 
-  const form = document.querySelector('form')
   const handleBookAppointments = () => {
+    const form = document.querySelector('form');
     form.style.display = 'block';
   }
 
@@ -73,12 +73,13 @@ const DetailPage = ({
             />
           </div>
           <aside className="details">
+            <div className="head">
+              <h1>{hall}</h1>
+              <h6>Lorem ipsum dolor sit amet</h6>
+            </div>
             <ul>
               <li className="item-detail">
                 <span>Building </span> <span>{building}</span>
-              </li>
-              <li className="item-detail">
-                <span>Hall </span> <span>{hall}</span>
               </li>
               <li className="item-detail">
                 <span> City </span> <span>{city}</span>

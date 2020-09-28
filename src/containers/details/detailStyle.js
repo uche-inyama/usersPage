@@ -7,7 +7,7 @@ grid-template-columns: 2fr 10fr;
   .top-wrapper{
     display: grid;
     grid-template-columns: 8fr 4fr;
-    padding-top: 5px;
+    padding-top: 80px;
     .image-wrapper{
       width: 450px;
     }
@@ -28,8 +28,23 @@ grid-template-columns: 2fr 10fr;
     justify-content: space-between;
     font-size: 0.8em;
     padding: 15px 5px 15px 5px;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0 5px;
+  }
+  .head{
+    font-family: 'Roboto', sans-serif;
+    height: 50px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    h1{
+      font-size: 1.5em;
+      padding-bottom: 8px;
+    }
+    h6{
+      font-size: 0.7em;
+      font-weight: 700;
+    }
   }
 
   li.item-detail:nth-child(odd){

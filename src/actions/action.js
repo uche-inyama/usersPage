@@ -104,7 +104,9 @@ export const receiveAppointments = username => {
       .then(response => response.json())
       .then(({ appointments }) => {
         dispatch(getAppointments(appointments));
-      });
+      }).catch((e) => {
+        console.log(e)
+      })
   };
 };
 
