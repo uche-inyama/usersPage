@@ -90,7 +90,7 @@ const DetailPage = ({
                 <span>Capacity </span> <span>{capacity}</span>
               </li>
               <li className="item-detail">
-                <span>Price </span> <span>{price}</span>
+                <span>Price </span> <span>{price} units</span>
               </li>
             </ul>
           </aside>
