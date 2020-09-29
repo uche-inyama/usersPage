@@ -22,7 +22,7 @@ nav{
       width: 125px;
       color: black;
       position: relative;
-      bottom: 40px;
+      bottom: 52px;
       :hover {
         box-shadow: 0 0 11px rgba(33,33,33,.2); 
       }
@@ -36,7 +36,8 @@ nav{
     .navigation{
       display: flex;
       flex-direction: column;
-      font-family: 'Work Sans', sans-serif;
+      // font-family: 'Work Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-weight: 700;
       grid-template-columns: 1fr;
       grid-gap: 50px;

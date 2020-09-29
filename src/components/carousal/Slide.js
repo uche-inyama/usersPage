@@ -2,9 +2,8 @@
 import { css, jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { StyledItemContainer, StyledSocialMediaIcons } from './slideStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { StyledItemContainer, StyledSocialMediaIcons } from './slideStyle';
 
 const Slide = ({ content, id, center }) => {
   const detailsPath = `/details/${id}`;
@@ -25,7 +24,8 @@ const Slide = ({ content, id, center }) => {
     `}
       />
       <div className="hall-name">{center.hall}</div>
-      <div className="info">Lorem ipsum dolor sit amet, consectetur
+      <div className="info">
+        Lorem ipsum dolor sit amet, consectetur
       </div>
 
       <StyledSocialMediaIcons className="navEnd">
@@ -44,6 +44,16 @@ Slide.defaultProps = {
 Slide.propTypes = {
   content: PropTypes.string,
   id: PropTypes.number.isRequired,
+  center: PropTypes.arrayOf(
+    PropTypes.shape({
+      building: PropTypes.string.isRequired,
+      hall: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      state: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      capacity: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default Slide;

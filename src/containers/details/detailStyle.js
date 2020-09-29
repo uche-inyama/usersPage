@@ -54,12 +54,20 @@ grid-template-columns: 2fr 10fr;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 224px;
+    position: relative;
     h2{
-      font-family: 'Work Sans', sans-serif;
-      padding: 15px 0 0 100px;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      left: 120px;
+      font-weight: 700;
       cursor: pointer;
+      width: 40%;
+      text-align: center;
+      padding-top: 12px;
+      margin-top: 7px;
       :hover{
         color: #8bc238;
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
       }
     }
   }
@@ -67,8 +75,8 @@ grid-template-columns: 2fr 10fr;
     display: none;
     padding-left: 100px;
     position: absolute;
-    left: 110px;
-    top: 100px;
+    right: 260px;
+    bottom: 150px;
     input{
       font-family: 'Work Sans', sans-serif;
       width: 300px;

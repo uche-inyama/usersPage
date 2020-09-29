@@ -11,11 +11,11 @@ const DetailPage = ({
   centers, bookings, match, logOut, currentUser,
 }) => {
   const { id } = match.params;
+  const centerId = parseInt(id, 10);
   const [email, setEmailAddress] = useState('');
   const [useCity, setCity] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const date = '2019-06-26';
   const center = centers.find(element => element.id === parseInt(id, 10));
   const image = center ? center.image : '';
   const hall = center ? center.hall : '';
@@ -28,6 +28,8 @@ const DetailPage = ({
   const url = `${image}`;
 
   const user = localStorage.getItem('current_user');
+  const getUserId = localStorage.getItem('user_id');
+  const userId = parseInt(getUserId, 10);
 
   const emailChangeHandler = e => {
     e.preventDefault();
@@ -41,16 +43,19 @@ const DetailPage = ({
 
   const submitHandler = e => {
     e.preventDefault();
+    const form = document.querySelector('form');
     const data = new FormData(e.target);
     bookings(data);
     setEmailAddress('');
     setCity('');
+    setSelectedDate('');
+    form.style.display = 'none';
   };
 
   const handleBookAppointments = () => {
     const form = document.querySelector('form');
     form.style.display = 'block';
-  }
+  };
 
   const renderNavBar = user ? (
     <NavBar
@@ -79,27 +84,52 @@ const DetailPage = ({
             </div>
             <ul>
               <li className="item-detail">
-                <span>Building </span> <span>{building}</span>
+                <span>Building </span>
+                {' '}
+                <span>{building}</span>
               </li>
               <li className="item-detail">
-                <span> City </span> <span>{city}</span>
+                <span> City </span>
+                {' '}
+                <span>{city}</span>
               </li>
               <li className="item-detail">
-                <span>State </span> <span>{state}</span>
+                <span>State </span>
+                {' '}
+                <span>{state}</span>
               </li>
               <li className="item-detail">
-                <span>Capacity </span> <span>{capacity}</span>
+                <span>Capacity </span>
+                {' '}
+                <span>{capacity}</span>
               </li>
               <li className="item-detail">
-                <span>Price </span> <span>{price} units</span>
+                <span>Price </span>
+                {' '}
+                <span>
+                  {price}
+                  {' '}
+                  units
+                </span>
               </li>
             </ul>
           </aside>
         </section>
 
         <section className="book-appointment">
+          {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
           <h2 onClick={handleBookAppointments}>Book an Appointment with us.</h2>
           <form onSubmit={submitHandler}>
+            <input
+              type="hidden"
+              name="appointment[center_id]"
+              value={centerId}
+            />
+            <input
+              type="hidden"
+              name="appointment[user_id]"
+              value={userId}
+            />
             <input
               type="text"
               name="appointment[username]"
@@ -137,6 +167,8 @@ const DetailPage = ({
               selected={selectedDate}
               onChange={date => setSelectedDate(date)}
               placeholderText="date"
+              name="appointment[date]"
+              value={selectedDate}
             />
             <br />
             <input type="submit" value="submit" />

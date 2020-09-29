@@ -48,13 +48,13 @@ App.propTypes = {
 };
 
 const mapDispatchToProps = dispatch => {
-  const username = localStorage.getItem('current_user');
+  const userId = localStorage.getItem('user_id');
   return {
     loadCenters: (() => {
       dispatch(receiveCenters());
     }),
     loadAppointments: (() => {
-      dispatch(receiveAppointments(username));
+      dispatch(receiveAppointments(userId));
     }),
   };
 };

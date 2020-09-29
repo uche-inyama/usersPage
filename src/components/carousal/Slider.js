@@ -12,7 +12,6 @@ import Arrow from './Arrow';
 const Slider = ({ centers }) => {
   const getWidth = () => 636.5;
 
-
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
@@ -23,7 +22,7 @@ const Slider = ({ centers }) => {
 
   const nextSlide = () => {
     if (activeIndex === centers.length - 3) return;
-    return setState({
+    setState({
       ...state,
       activeIndex: state.activeIndex + 1,
       translate: (state.activeIndex + 1) * 212,
@@ -31,8 +30,8 @@ const Slider = ({ centers }) => {
   };
 
   const prevSlide = () => {
-    if (activeIndex === 0) return
-    return setState({
+    if (activeIndex === 0) return;
+    setState({
       ...state,
       activeIndex: activeIndex - 1,
       translate: (activeIndex - 1) * 212,
@@ -41,11 +40,10 @@ const Slider = ({ centers }) => {
 
   const getlength = () => {
     let count = 1;
-    let value = centers.length / 3;
-    count *= (Math.floor(value))
+    const value = centers.length / 3;
+    count *= (Math.floor(value));
     return count + 1;
-  }
-  console.log(getlength());
+  };
 
   const SliderCSS = css`
   position: relative;

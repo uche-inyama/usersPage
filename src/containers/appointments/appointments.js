@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { removeUser } from '../../actions/action';
 import { AppointmentWrapper, AppointmantsContainer } from './appointmentStyle';
-import NavBar from '../../components/navBar/navBar'
-
+import NavBar from '../../components/navBar/navBar';
 
 const Appointments = ({ appointments, logOut, currentUser }) => {
   const { id } = useParams();
-
   const appointmentPerUser = appointments.filter(ele => id === ele.username);
   const user = localStorage.getItem('current_user');
 
@@ -29,12 +27,17 @@ const Appointments = ({ appointments, logOut, currentUser }) => {
           <li key={appointment.id} className="appointment-detail">
             <div className="venue">
               Venue:
-            {' '}
+              {' '}
               {appointment.hall}
               {' '}
-            event center, in
-            {' '}
+              event center, in
+              {' '}
               {appointment.city}
+              .
+              {' '}
+              Date:
+              {' '}
+              {appointment.date}
             </div>
           </li>
         ))}
@@ -44,6 +47,8 @@ const Appointments = ({ appointments, logOut, currentUser }) => {
 };
 
 Appointments.propTypes = {
+  logOut: PropTypes.func.isRequired,
+  currentUser: PropTypes.string.isRequired,
   appointments: PropTypes.arrayOf(
     PropTypes.shape({
       username: PropTypes.string.isRequired,

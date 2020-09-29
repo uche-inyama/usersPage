@@ -94,8 +94,8 @@ export const sheduleMeeting = data => {
   };
 };
 
-export const receiveAppointments = username => {
-  const url = `${imageUrl.herokuHost}/appointments/${username}`;
+export const receiveAppointments = userId => {
+  const url = `${imageUrl.herokuHost}/appointments/${userId}`;
   return dispatch => {
     fetch(url, {
       method: 'GET',
@@ -104,9 +104,7 @@ export const receiveAppointments = username => {
       .then(response => response.json())
       .then(({ appointments }) => {
         dispatch(getAppointments(appointments));
-      }).catch((e) => {
-        console.log(e)
-      })
+      });
   };
 };
 
@@ -122,6 +120,7 @@ export const authenticateUser = (data, cb) => {
       .then(({ status, currentUser }) => {
         if (status === 'created') {
           localStorage.setItem('current_user', currentUser.username);
+          localStorage.setItem('user_id', currentUser.id);
           dispatch(addUser(currentUser.username));
           cb();
         } else (dispatch(notLoggedIn('Invalid credentials')));

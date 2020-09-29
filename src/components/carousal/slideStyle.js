@@ -18,7 +18,6 @@ export const StyledItemContainer = styled.div`
   }
 `;
 
-
 export const StyledSocialMediaIcons = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -41,5 +40,4 @@ export const StyledSocialMediaIcons = styled.div`
     top: 4px;
     font-size: 0.8em;
   }
-`
-// export default StyledItemContainer;
+`;
