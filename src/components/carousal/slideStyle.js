@@ -10,7 +10,7 @@ export const StyledItemContainer = styled.div`
   }
   .info {
     text-align: center;
-    color: #969692;
+    color: #3d3d3c;
     font-size: 0.8em;
   }
   span {
