@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import HomePageWrapper from './HomePageStyle';
 import Slider from '../../components/carousal/Slider';
-import { removeUser } from '../../actions/action';
+import { removeUser, receiveAppointments, clearAppointments } from '../../actions/action';
 import NavBar from '../../components/navBar/navBar';
 
-const HomePage = ({ centers, currentUser, logOut }) => {
+const HomePage = ({ centers, currentUser, logOut, loadAppointments }) => {
+  useEffect(() => {
+    loadAppointments();
+    // eslint-disable-next-line
+  }, []);
   const user = localStorage.getItem('current_user');
   const renderNavBar = user ? (
     <NavBar
@@ -37,11 +41,18 @@ const mapStateToProps = state => ({
 
 });
 
-const mapDispatchToProps = dispatch => ({
-  logOut: (() => {
-    dispatch(removeUser());
-  }),
-});
+const mapDispatchToProps = dispatch => {
+  const userId = localStorage.getItem('user_id');
+  return {
+    logOut: (() => {
+      dispatch(removeUser());
+      dispatch(clearAppointments());
+    }),
+    loadAppointments: (() => {
+      dispatch(receiveAppointments(userId));
+    })
+  }
+};
 
 HomePage.propTypes = {
   currentUser: PropTypes.string.isRequired,

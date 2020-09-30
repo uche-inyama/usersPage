@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { sheduleMeeting, removeUser } from '../../actions/action';
+import { sheduleMeeting, removeUser, clearAppointments } from '../../actions/action';
 import DetailWrapper from './detailStyle';
 import NavBar from '../../components/navBar/navBar';
 
@@ -117,7 +117,6 @@ const DetailPage = ({
         </section>
 
         <section className="book-appointment">
-          {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
           <h2 onClick={handleBookAppointments}>Book an Appointment with us.</h2>
           <form onSubmit={submitHandler}>
             <input
@@ -211,6 +210,7 @@ const mapDispatchToProps = dispatch => ({
   }),
   logOut: (() => {
     dispatch(removeUser());
+    dispatch(clearAppointments());
   }),
 });
 

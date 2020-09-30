@@ -21,7 +21,7 @@ import '../reset.css';
 function App({ loadCenters, loadAppointments }) {
   useEffect(() => {
     loadCenters();
-    loadAppointments();
+    // loadAppointments();
     // eslint-disable-next-line
   }, []);
 

@@ -10,6 +10,7 @@ export const ADD_USER = 'ADD_USER';
 export const REMOVE_USER = 'REMOVE_USER';
 export const NOT_LOGGED_IN = 'NOT_LOGGED_IN';
 export const CLEAR_STATUS = 'CLEAR_STATUS';
+export const CLEAR_APPOINTMENTS = 'CLEAR_APPOINTMENTS';
 
 export const getCenters = centers => ({
   type: GET_CENTERS,
@@ -44,6 +45,10 @@ export const addUser = username => ({
 export const removeUser = () => ({
   type: REMOVE_USER,
 });
+
+export const clearAppointments = () => ({
+  type: CLEAR_APPOINTMENTS
+})
 
 export const notLoggedIn = status => ({
   type: NOT_LOGGED_IN,

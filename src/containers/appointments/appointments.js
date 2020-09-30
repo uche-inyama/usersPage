@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { removeUser } from '../../actions/action';
+import { removeUser, clearAppointments } from '../../actions/action';
 import { AppointmentWrapper, AppointmantsContainer } from './appointmentStyle';
 import NavBar from '../../components/navBar/navBar';
 
@@ -66,6 +66,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logOut: (() => {
     dispatch(removeUser());
+    dispatch(clearAppointments());
   }),
 });
 

@@ -44,16 +44,7 @@ Slide.defaultProps = {
 Slide.propTypes = {
   content: PropTypes.string,
   id: PropTypes.number.isRequired,
-  center: PropTypes.arrayOf(
-    PropTypes.shape({
-      building: PropTypes.string.isRequired,
-      hall: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      state: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      capacity: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  center: PropTypes.object.isRequired,
 };
 
 export default Slide;
