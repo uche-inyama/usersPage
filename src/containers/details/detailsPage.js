@@ -117,6 +117,7 @@ const DetailPage = ({
         </section>
 
         <section className="book-appointment">
+          {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
           <h2 onClick={handleBookAppointments}>Book an Appointment with us.</h2>
           <form onSubmit={submitHandler}>
             <input

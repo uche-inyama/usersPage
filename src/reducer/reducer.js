@@ -7,7 +7,7 @@ import {
   POST_USER,
   BOOK_APPOINTMENT,
   GET_APPOINTMENTS,
-  CLEAR_APPOINTMENTS
+  CLEAR_APPOINTMENTS,
 } from '../actions/action';
 
 export const centers = (state = [], action) => {
@@ -57,7 +57,7 @@ export const appointmentBookings = (state = [], action) => {
     case GET_APPOINTMENTS:
       return [...state, ...action.appointments];
     case CLEAR_APPOINTMENTS:
-      return []
+      return [];
     default:
       return state;
   }

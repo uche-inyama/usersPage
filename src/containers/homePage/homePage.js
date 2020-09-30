@@ -6,7 +6,9 @@ import Slider from '../../components/carousal/Slider';
 import { removeUser, receiveAppointments, clearAppointments } from '../../actions/action';
 import NavBar from '../../components/navBar/navBar';
 
-const HomePage = ({ centers, currentUser, logOut, loadAppointments, appointments }) => {
+const HomePage = ({
+  centers, currentUser, logOut, loadAppointments, appointments,
+}) => {
   useEffect(() => {
     if (appointments.length === 0) {
       loadAppointments();
@@ -52,13 +54,23 @@ const mapDispatchToProps = dispatch => {
     }),
     loadAppointments: (() => {
       dispatch(receiveAppointments(userId));
-    })
-  }
+    }),
+  };
 };
 
 HomePage.propTypes = {
   currentUser: PropTypes.string.isRequired,
   logOut: PropTypes.func.isRequired,
+  loadAppointments: PropTypes.func.isRequired,
+  appointments: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      hall: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   centers: PropTypes.arrayOf(
     PropTypes.shape({
       building: PropTypes.string.isRequired,

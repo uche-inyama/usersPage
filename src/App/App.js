@@ -6,7 +6,6 @@ import {
 import { connect } from 'react-redux';
 import {
   receiveCenters,
-  receiveAppointments,
 } from '../actions/action';
 
 import HomePage from '../containers/homePage/homePage';
@@ -18,7 +17,7 @@ import AppWrapper from './AppStyle';
 import AppContainerStyle from './appContainerStyle';
 import '../reset.css';
 
-function App({ loadCenters, loadAppointments, appointments }) {
+function App({ loadCenters }) {
   useEffect(() => {
     loadCenters();
     // eslint-disable-next-line
@@ -43,19 +42,12 @@ function App({ loadCenters, loadAppointments, appointments }) {
 
 App.propTypes = {
   loadCenters: PropTypes.func.isRequired,
-  loadAppointments: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => {
-  const userId = localStorage.getItem('user_id');
-  return {
-    loadCenters: (() => {
-      dispatch(receiveCenters());
-    }),
-    loadAppointments: (() => {
-      dispatch(receiveAppointments(userId));
-    }),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  loadCenters: (() => {
+    dispatch(receiveCenters());
+  }),
+});
 
 export default connect(null, mapDispatchToProps)(App);

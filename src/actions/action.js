@@ -47,8 +47,8 @@ export const removeUser = () => ({
 });
 
 export const clearAppointments = () => ({
-  type: CLEAR_APPOINTMENTS
-})
+  type: CLEAR_APPOINTMENTS,
+});
 
 export const notLoggedIn = status => ({
   type: NOT_LOGGED_IN,
