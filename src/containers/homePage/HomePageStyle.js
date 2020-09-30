@@ -22,9 +22,7 @@ font-family: 'Nunito Sans', sans-serif;
     font-size: 1.2em;
   }
   h6 {
-    color: #cdd1ce;
-    font-weight: 400;
-    font-size: 0.7em;
+    color: #969692;
     position:relative;
     top: 30px;
     font-size: 0.6em;

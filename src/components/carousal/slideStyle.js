@@ -10,7 +10,7 @@ export const StyledItemContainer = styled.div`
   }
   .info {
     text-align: center;
-    color: #cdd1ce;
+    color: #969692;
     font-size: 0.8em;
   }
   span {
@@ -23,7 +23,7 @@ export const StyledSocialMediaIcons = styled.div`
   grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
   font-family: 'Nunito Sans', sans-serif;
-  color: #cdd1ce;
+  color: #969692;
 
   div {
     width: 25px;
