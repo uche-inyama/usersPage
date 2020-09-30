@@ -27,7 +27,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://focused-hermann-839d03.netlify.app)
+[Live Demo Link](https://inspiring-swirles-e2b829.netlify.app)
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ To get the local copy up and running follow these simple example steps.
 
 ### Deployment:
 
-https://focused-hermann-839d03.netlify.app
+https://inspiring-swirles-e2b829.netlify.app
 
 ## Author
 
