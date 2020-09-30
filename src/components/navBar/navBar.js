@@ -24,7 +24,7 @@ function NavBar({ currentUser, logOut }) {
             <p className="center">Centers</p>
           </Link>
           <li className="navigation">
-            <div className="hall-button">Halls</div>
+            <Link to="/Home" className="hall-button">Halls</Link>
             <Link to={`/appointment/${currentUser}`}>Bookings</Link>
             <div className="signout" onClick={handleClick}>sign out</div>
           </li>

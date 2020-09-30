@@ -18,10 +18,9 @@ import AppWrapper from './AppStyle';
 import AppContainerStyle from './appContainerStyle';
 import '../reset.css';
 
-function App({ loadCenters, loadAppointments }) {
+function App({ loadCenters, loadAppointments, appointments }) {
   useEffect(() => {
     loadCenters();
-    // loadAppointments();
     // eslint-disable-next-line
   }, []);
 

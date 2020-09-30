@@ -6,9 +6,11 @@ import Slider from '../../components/carousal/Slider';
 import { removeUser, receiveAppointments, clearAppointments } from '../../actions/action';
 import NavBar from '../../components/navBar/navBar';
 
-const HomePage = ({ centers, currentUser, logOut, loadAppointments }) => {
+const HomePage = ({ centers, currentUser, logOut, loadAppointments, appointments }) => {
   useEffect(() => {
-    loadAppointments();
+    if (appointments.length === 0) {
+      loadAppointments();
+    }
     // eslint-disable-next-line
   }, []);
   const user = localStorage.getItem('current_user');
@@ -38,7 +40,7 @@ const HomePage = ({ centers, currentUser, logOut, loadAppointments }) => {
 const mapStateToProps = state => ({
   centers: state.centers,
   currentUser: state.currentUser,
-
+  appointments: state.appointmentBookings,
 });
 
 const mapDispatchToProps = dispatch => {
