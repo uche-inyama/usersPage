@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Name: Event Centers
 
-## Available Scripts
+## Home page
+![emi](https://user-images.githubusercontent.com/46329537/94638230-71775b00-02d1-11eb-80d0-b39009f09809.png)
 
-In the project directory, you can run:
+## Detail page
+![emi1](https://user-images.githubusercontent.com/46329537/94638240-750ae200-02d1-11eb-93a1-7ec5521cf9ea.png)
 
-### `yarn start`
+Additional description about the project and its features.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- JavaScript,
+- HTML,
+- CSS,
+- React
+- Redux
 
-### `yarn test`
+## Features
+- List of event centers.
+- Event Center detail page.
+- A form to book an appointment.
+- A page with the list of appointments.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Potential Features
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Live Demo
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[Live Demo Link](https://inspiring-swirles-e2b829.netlify.app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `yarn eject`
+Clone the repository with `git@github.com:uche-inyama/usersPage.git` to get a local copy.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get the local copy up and running follow these simple example steps.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Node.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Usage
 
-## Learn More
+    - First run, yarn.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - Then run, yarn start, to start the server.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Run tests
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    run: npm run test
 
-### Analyzing the Bundle Size
+### Deployment:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+https://inspiring-swirles-e2b829.netlify.app
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+👤 **Inyama, Uchechukwu Henry**
 
-### Advanced Configuration
+- Github: [@githubhandle](https://github.com/uche-inyama)
+- Twitter: [@twitterhandle](https://twitter.com/euuoc)
+- Linkedin: [linkedin](https://www.linkedin.com/in/uchechukwu-inyama-b3429a105/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## 🤝 Contributing
 
-### Deployment
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Show your support
 
-### `yarn build` fails to minify
+Give a ⭐️ if you like this project!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Acknowledgments
+
+- [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for the UI design.
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
