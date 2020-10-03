@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`detailsPage as a connected component  1`] = `ShallowWrapper {}`;
+
+exports[`detailsPage as a connected component gets snap shot for details page 1`] = `ShallowWrapper {}`;
