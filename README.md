@@ -1,5 +1,8 @@
 # Project Name: Event Centers
 
+EventCenters is application that allows users to book an appointment with the company after going the products(halls) an event center has.
+
+
 ## Home page
 ![emi](https://user-images.githubusercontent.com/46329537/94638230-71775b00-02d1-11eb-80d0-b39009f09809.png)
 
