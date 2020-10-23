@@ -1,4 +1,4 @@
-# Project Name: Event Centers
+# Event Centers
 
 EventCenters is application that allows users to book an appointment with the company after going the products(halls) an event center has.
 
